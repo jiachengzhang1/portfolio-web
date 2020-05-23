@@ -1,0 +1,29 @@
+.contact-title {
+    font-family: 'Fira Code', monospace
+}
+
+.contact-content {
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 75px
+}
+
+.contact-item {
+    margin-bottom: 35px;
+}
+
+.contact-item-title {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 20px;
+    font-weight: 900;
+    padding-bottom: 0px;
+}
+
+.contact-item-icon {
+    margin-bottom: -5px;
+}
+
+.contact-item-content {
+    margin-left: 10px;
+    font-size: 20px;
+    color: black;
+}
