@@ -7,7 +7,8 @@ import Window from "../layouts/Window";
 
 class App extends React.Component {
   state = {
-    resumeLink: "https://google.com",
+    resumeLink:
+      "https://jzhangdeveloper-website.s3.amazonaws.com/resume/Resume2020.pdf",
     projects: [
       {
         title: "jzhangdeveloper.com",
@@ -24,7 +25,8 @@ class App extends React.Component {
           { name: "Bootstrap", link: "https://getbootstrap.com/" },
           { name: "Semantic UI", link: "https://semantic-ui.com/" },
         ],
-        imageName: "project_web.png",
+        imageURL:
+          "https://jzhangdeveloper-website.s3.amazonaws.com/images/project_web.png",
         time: "May 2020",
       },
     ],
@@ -105,6 +107,11 @@ class App extends React.Component {
         link: "https://linkedin.com/in/jiacheng-zhang-881174161 ",
         icon: <AiFillLinkedin size={23} color={"black"} />,
       },
+    ],
+    footerLogos: [
+      "https://jzhangdeveloper-website.s3.amazonaws.com/logos/react-logo.svg",
+      "https://jzhangdeveloper-website.s3.amazonaws.com/logos/semantic-ui-logo.png",
+      "https://jzhangdeveloper-website.s3.amazonaws.com/logos/bootstrap-logo.png",
     ],
   };
   render() {

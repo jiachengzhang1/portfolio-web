@@ -1,5 +1,4 @@
 import React from "react";
-import { FiDownload } from "react-icons/fi";
 
 import PageLayout from "../layouts/PageLayout";
 import Title from "../components/Title";
@@ -16,14 +15,7 @@ const constructHeader = (resumeLink) => {
         <Link
           className={"btn btn-sm btn-outline-dark p-1"}
           href={resumeLink}
-          content={
-            <div>
-              <span className="mr-1">
-                <FiDownload size={18} />
-              </span>
-              <span>Resume</span>
-            </div>
-          }
+          content={<span>Resume</span>}
         />
       </p>
     </div>

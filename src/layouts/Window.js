@@ -32,6 +32,7 @@ export default class Window extends React.Component {
       educations,
       skills,
       contacts,
+      footerLogos,
     } = this.props.state;
     return (
       <div
@@ -64,7 +65,7 @@ export default class Window extends React.Component {
             component={() => <Contact contacts={contacts} />}
           />
         </BrowserRouter>
-        <Footer />
+        <Footer footerLogos={footerLogos} />
       </div>
     );
   }

@@ -1,10 +1,7 @@
 import "./Footer.css";
 import React from "react";
-import reactLogo from "../logos/react-logo.svg";
-import bootstrapLogo from "../logos/bootstrap-logo.png";
-import semanticLogo from "../logos/semantic-ui-logo.png";
 
-const Footer = () => {
+const Footer = ({ footerLogos }) => {
   return (
     <div className="footer text-center text-justify">
       <div className="footer-content row">
@@ -12,9 +9,9 @@ const Footer = () => {
           <p>Designed and Built by Jiacheng Zhang</p>
           <span>
             Built with
-            <img title="react" alt="react" src={reactLogo} />
-            <img title="react" alt="react" src={semanticLogo} />
-            <img title="react" alt="react" src={bootstrapLogo} />
+            {footerLogos.map((logo) => (
+              <img title="react" alt="react" src={logo} />
+            ))}
           </span>
         </div>
       </div>

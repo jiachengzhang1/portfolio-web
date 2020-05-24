@@ -45,14 +45,14 @@ const getTextSection = (
   );
 };
 
-const getImageSection = (imageName, windowSize) => {
+const getImageSection = (imageURL, windowSize) => {
   console.log(windowSize);
   const column = windowSize.width > WIDTH ? "col-md-7" : "col-md-12";
   return (
     <div className={`col ${column}`}>
       <img
         className="project-img rounded float-right img-fluid"
-        src={require(`../images/${imageName}`)}
+        src={imageURL}
         alt="project"
       />
     </div>
@@ -66,7 +66,7 @@ const getContent = (
   subtitle,
   demoLink,
   codeLink,
-  imageName
+  imageURL
 ) => {
   return windowSize.width > WIDTH ? (
     <div className="project-content row">
@@ -78,7 +78,7 @@ const getContent = (
         codeLink,
         windowSize
       )}
-      {getImageSection(imageName, windowSize)}
+      {getImageSection(imageURL, windowSize)}
     </div>
   ) : (
     <div className="project-content">
@@ -92,7 +92,7 @@ const getContent = (
           windowSize
         )}
       </div>
-      <div className="row">{getImageSection(imageName, windowSize)} </div>
+      <div className="row">{getImageSection(imageURL, windowSize)} </div>
     </div>
   );
 };
@@ -105,7 +105,7 @@ const Project = ({ project, windowSize }) => {
     demoLink,
     codeLink,
     technologies,
-    imageName,
+    imageURL,
     time,
   } = project;
 
@@ -126,7 +126,7 @@ const Project = ({ project, windowSize }) => {
         subtitle,
         demoLink,
         codeLink,
-        imageName
+        imageURL
       )}
 
       <div className="technologies mt-1">
