@@ -3,3 +3,4 @@ User-agent: *
 Disallow: /contact/
 Disallow: /statics/
 Noindex: /contact/
+Noindex: /statics/

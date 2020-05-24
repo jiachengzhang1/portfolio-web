@@ -16,7 +16,7 @@ class App extends React.Component {
         description: `A responsive portfolio website to showcase projects, skills and educations through
         Portfolio, About and Contact pages. The Front-End was built using React, Bootstrap and Sematic UI 
         with CSS for custom styling.`,
-        demoLink: "https:www.jzhangdeveloper.com",
+        demoLink: "https://www.jzhangdeveloper.com",
         codeLink: "https://github.com/jiachengzhang1/portfolio-web",
         technologies: [
           { name: "React", link: "https://reactjs.org/" },
