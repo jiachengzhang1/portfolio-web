@@ -7,6 +7,7 @@ const getSubskillComponent = (windowSize, skills) => {
     <div
       className="card border-light"
       style={{ width: "100%", backgroundColor: "#f9f9f9c5" }}
+      key={name}
     >
       <h6
         className="card-title text-center mb-2 pt-1"

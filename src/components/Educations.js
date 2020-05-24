@@ -3,8 +3,9 @@ import Degrees from "./Degrees";
 import Title from "./Title";
 
 const Educations = ({ educations }) => {
+  let key = 0;
   const eductionList = educations.map(({ university, degrees }) => (
-    <Degrees university={university} degrees={degrees} />
+    <Degrees key={key++} university={university} degrees={degrees} />
   ));
   return (
     <div className="eduction row">

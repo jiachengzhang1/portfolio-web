@@ -13,15 +13,13 @@ class App extends React.Component {
       {
         title: "jzhangdeveloper.com",
         subtitle: "Protfolio Website",
-        description: `Description: when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not
-        only five centuries, but also the leap into electronic
-        typesetting, remaining essentially`,
-        demoLink: "https:www.google.com",
-        codeLink: "https:www.google.com",
+        description: `A responsive portfolio website to showcase projects, skills and educations through
+        Portfolio, About and Contact pages. The Front-End was built using React, Bootstrap and Sematic UI 
+        with CSS for custom styling.`,
+        demoLink: "https:www.jzhangdeveloper.com",
+        codeLink: "https://github.com/jiachengzhang1/portfolio-web",
         technologies: [
           { name: "React", link: "https://reactjs.org/" },
-          { name: "Redux", link: "https://react-redux.js.org/" },
           { name: "Bootstrap", link: "https://getbootstrap.com/" },
           { name: "Semantic UI", link: "https://semantic-ui.com/" },
         ],
@@ -30,10 +28,8 @@ class App extends React.Component {
         time: "May 2020",
       },
     ],
-    statement: `I'm a Front-End Developer. 
-    I'm driven to solve day to day problems by creating web applications.
-    I'm fascinated by the cutting-edge technolongies that allow me achieve the
-    goal.`,
+    statement: `I'm a Graduate Student at the University of Arizona. 
+    I'm driven to solve day to day problems by creating web applications.`,
     educations: [
       {
         university: "University of Arizona",
@@ -90,7 +86,7 @@ class App extends React.Component {
     ],
     contacts: [
       {
-        name: "E-mail",
+        name: "Email",
         content: "jiachengzhangdeveloper@outlook.com",
         link: "mailto:jiachengzhangdeveloper@outlook.com?",
         icon: <MdEmail size={23} color={"black"} />,

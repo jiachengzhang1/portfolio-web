@@ -46,7 +46,6 @@ const getTextSection = (
 };
 
 const getImageSection = (imageURL, windowSize) => {
-  console.log(windowSize);
   const column = windowSize.width > WIDTH ? "col-md-7" : "col-md-12";
   return (
     <div className={`col ${column}`}>
@@ -114,6 +113,7 @@ const Project = ({ project, windowSize }) => {
       className={"ui tag label bg-dark text-light mr-3"}
       href={link}
       content={name}
+      key={name}
     />
   ));
   return (

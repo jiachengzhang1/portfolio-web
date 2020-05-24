@@ -2,6 +2,7 @@ import "./Footer.css";
 import React from "react";
 
 const Footer = ({ footerLogos }) => {
+  let key = 1;
   return (
     <div className="footer text-center text-justify">
       <div className="footer-content row">
@@ -10,7 +11,7 @@ const Footer = ({ footerLogos }) => {
           <span>
             Built with
             {footerLogos.map((logo) => (
-              <img title="react" alt="react" src={logo} />
+              <img key={key++} title="react" alt="react" src={logo} />
             ))}
           </span>
         </div>

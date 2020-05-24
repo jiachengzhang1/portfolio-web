@@ -3,8 +3,6 @@ import React from "react";
 import Timeline from "../layouts/Timeline";
 
 const getDegreeType = (type, major) => {
-  console.log(type);
-
   return !type || !major ? "" : `${type} in ${major}`;
 };
 

@@ -1,7 +1,16 @@
+body {
+    background: #f9f9f9a6 !important;
+}
+
 .ubuntu {
     font-family: 'Ubuntu', sans-serif
 }
 
 .monospace {
     font-family: 'Fira Code', monospace;
+}
+
+.container {
+    position: relative;
+    min-height: 98.9vh
 }

@@ -24,7 +24,7 @@ export default class Window extends React.Component {
     window.removeEventListener("resize", this.updateDimensions.bind(this));
   }
   render() {
-    const currentPath = window.location.pathname;
+    let currentPath = window.location.pathname;
     const {
       resumeLink,
       projects,
@@ -34,13 +34,18 @@ export default class Window extends React.Component {
       contacts,
       footerLogos,
     } = this.props.state;
+    currentPath = currentPath === "/index.html" ? "/" : currentPath;
     return (
-      <div
-        className="container"
-        style={{ position: "relative", minHeight: "98.9vh" }}
-      >
+      <div className="container">
         <BrowserRouter>
           <Header path={currentPath} />
+          <Route
+            path="/index.html"
+            exact
+            component={() => (
+              <Portfolio windowSize={this.state} projects={projects} />
+            )}
+          ></Route>
           <Route
             path="/"
             exact
@@ -62,7 +67,9 @@ export default class Window extends React.Component {
           />
           <Route
             path="/contact"
-            component={() => <Contact contacts={contacts} />}
+            component={() => (
+              <Contact contacts={contacts} windowSize={this.state} />
+            )}
           />
         </BrowserRouter>
         <Footer footerLogos={footerLogos} />
