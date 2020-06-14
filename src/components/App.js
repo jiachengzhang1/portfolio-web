@@ -11,10 +11,25 @@ class App extends React.Component {
       "https://jzhangdeveloper-website.s3.amazonaws.com/resume/Resume2020.pdf",
     projects: [
       {
+        title: "SpaceX and Mars",
+        subtitle: "SpaceX's Launches and Mars Weather Website",
+        description: `A responsive website leverages SpaceX API and NASA API to display information about SpaceX's next upcoming,
+        future and past missions, the weather on Mars and an About page. Technologies used include React, Redux and Bootstrap.`,
+        demoLink: "https://www.spacexandmars.com",
+        codeLink: "https://github.com/jiachengzhang1/spacex-and-mars",
+        technologies: [
+          { name: "React", link: "https://reactjs.org/" },
+          { name: "Bootstrap", link: "https://getbootstrap.com/" },
+        ],
+        imageURL:
+          "https://jzhangdeveloper-website.s3.amazonaws.com/images/spacex_and_mars.png",
+        time: "May 2020",
+      },
+      {
         title: "jzhangdeveloper.com",
         subtitle: "Protfolio Website",
         description: `A responsive portfolio website to showcase projects, skills and educations through
-        Portfolio, About and Contact pages. The Front-End was built using React, Bootstrap and Sematic UI 
+        Portfolio, About and Contact pages. The Front-End was built using React, Bootstrap and Sematic UI
         with CSS for custom styling.`,
         demoLink: "https://www.jzhangdeveloper.com",
         codeLink: "https://github.com/jiachengzhang1/portfolio-web",
@@ -25,10 +40,10 @@ class App extends React.Component {
         ],
         imageURL:
           "https://jzhangdeveloper-website.s3.amazonaws.com/images/project_web.png",
-        time: "May 2020",
+        time: "April 2020",
       },
     ],
-    statement: `I'm a Graduate Student at the University of Arizona. 
+    statement: `I'm a Graduate Student at the University of Arizona.
     I'm driven to solve day to day problems by creating web applications.`,
     educations: [
       {
