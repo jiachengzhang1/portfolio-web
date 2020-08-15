@@ -1,0 +1,176 @@
+body {
+    font-family: Roboto,Helvetica,sans-serif;
+    background: #faf1e665;
+}
+
+.main-wrapper {
+    /* height: 100vh; */
+}
+
+.sitebar {
+    position: absolute;
+    left: 0;
+    width: 23vw;
+    max-width: 300px;
+    height: 100vh;
+    padding: 10px;
+    background-color: #4169E1;
+    color: white;
+    /* z-index: 100; */
+}
+
+.sitebar-inner {
+    margin-top: 45px;
+}
+
+.block {
+    margin-bottom: 80px;
+}
+
+.navigation-block,
+.social-block {
+    margin-left: 38px;
+}
+
+.social-block-title {
+    font-size: 14px;
+}
+
+.social-block-content {
+    margin-top: 8px !important;
+    font-size: 22px !important; 
+}
+
+.social-block-content a {
+    color: rgba(255, 255, 255, 0.6) !important;
+    margin-right: 9px;
+}
+
+.social-block-content a:hover {
+    color: rgb(255, 255, 255) !important;
+}
+
+.content-wrapper {
+    position: absolute;
+    left: 300px;
+    height: 100vh;
+    width: 77vw;
+    padding: 20px 20px 20px 30px;
+    overflow-y: auto;
+    /* padding: 50px; */
+}
+
+.person {
+    text-align: center;
+}
+
+.person h1{
+    font-size: 28px;
+}
+
+.person h2 {
+    font-size: 22px;
+}
+
+.person h2 {
+    font-weight: 100;
+}
+
+.sitebar-inner a {
+    text-decoration: none;
+    color: white;
+}
+
+.sitebar-inner a:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.navigation-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-sidebar li {
+    margin-bottom: 16px;
+}
+
+.navigation-sidebar a {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-decoration: none;
+}
+
+.navigation-sidebar a:hover,
+.current-page a {
+    color: rgba(255, 255, 255, 0.95) !important;
+    padding: 6px 8px;
+    background-color: #04278fc7;
+    border-radius: 5px;
+}
+
+.navigation-sidebar-selected {
+    color: white;
+}
+
+.sidebar-top {
+    display: none;
+}
+
+.person-photo img {
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+}
+
+.person-content {
+    margin-top: 40px;
+}
+
+@media (max-width: 1300px) {
+    .content-wrapper {
+        left: 23vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .sitebar {
+        display: none;
+    }
+
+    .sidebar-top {
+        background-color: #4169E1;
+        width: 100%;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* position: absolute; */
+        /* z-index: 100; */
+    }
+
+    .sidebar-title {
+        color: white;
+        text-align: center;
+    }
+
+    .sidebar-top h1 {
+        font-size: 24px;
+        margin-bottom: 1px;
+    }
+
+    .sidebar-top h2 {
+        font-size: 16px;
+        font-weight: 200;
+        margin-bottom: 2px;
+    }
+
+    .content-wrapper {
+        top: 64px;
+        left: 0px;
+        width: 96vw;
+        padding: 20px 0 0 4vw;
+        overflow-y: initial;
+    }
+}

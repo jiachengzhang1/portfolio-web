@@ -1,0 +1,160 @@
+.portfolio-page {
+    /* padding: 0 20px 0 30px; */
+}
+
+.portfolio-page h1 {
+    font-size: 36px;
+}
+
+.portfolio-content {
+    padding: 0;
+    /* margin-left: -20px; */
+}
+
+.project {
+    display: inline-block;
+    background: #dbf4fc;
+    padding: 15px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    /* width: 100vw; */
+}
+
+.project-date span {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    margin: -4px 0 1rem 0;
+    border-radius: 5px;
+    background: #fada5e;
+    font-size: 14px;
+}
+
+/* .project-content {
+    width: 100%;
+} */
+
+.text-content {
+    float: left;
+}
+
+.text-content.half {
+    min-height: 100%;
+    max-width: 45%;
+}
+
+.img-content {
+    margin-left: 3%;
+    min-height: 100%;
+    max-width: 50%;
+}
+
+.img-content img {
+    max-height: 400px;
+}
+
+.project-links a{
+    text-decoration: none;
+    color: white;
+    background: #5978d3;
+    padding: 8px 20px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+.project-links a:hover {
+    background: #375dcf;
+}
+
+.project-technologies {
+    margin: 40px 0 0 0;
+    padding-bottom: 20px;
+}
+
+.project-technologies h5 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.project-technologies a {
+    color: rgba(255, 255, 255, 0.98);
+    padding: 3px 18px;
+    background: #3a60d1;
+    margin-right: 2px;
+    border-radius: 50px;
+}
+
+@media (max-width: 1000px) {
+    .project-content {
+        flex-direction: column;
+    }
+    .text-content.half {
+        max-width: 100%;
+    }
+    
+    .img-content {
+        margin-left: 0%;
+        max-width: 100%;
+    }
+
+    .project-technologies {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 568px) {
+    .project {
+        background: none;
+        padding: 0;
+        margin-bottom: 0;
+        border-radius: none;
+    }
+
+    .portfolio-content {
+        margin-left: 100px;
+        padding: 0 10px 0 28px;
+        border-left: 2px solid #a8a4a4;
+    }
+    
+    .project-date {
+        position: relative;
+        margin-left: -130px;
+        margin-top: 20px;
+    }
+    
+    .project-content {
+        display: flex;
+        padding: 20px 25px;
+        border: 1px solid #cbe2fd;
+        border-radius: 6px;
+        border-top-left-radius: 3px;
+        background: #e6f9ff60;
+        position: relative;
+        margin-bottom: 20px;
+        margin-top: -47px;
+    }
+    
+    .project-content::before {
+        content: " ";
+        position: absolute;
+        display: block;
+        background: #4169E1;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        top: 10px;
+        left: -35px;
+    }
+    
+    .project-content::after {
+        content: " ";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent #cbe2fd transparent transparent;
+        border-width: 15px;
+        position: absolute;
+        top: 0px;
+        left: -31px;
+    }
+}

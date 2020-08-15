@@ -1,0 +1,121 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio_web/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio_web/portfolio.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio_web/experience.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio_web/education.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio_web/contact.css' %}">
+
+    {% if title %}
+    <title>Jiacheng Zhang - {{ title }}</title>
+    {% else %}
+    <title>Jiacheng Zhang</title>
+    {% endif %}
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <aside>
+            <div class="sitebar">
+                <div class="sitebar-inner">
+                    <div class="block">
+                        <a class="person" href="#">
+                            <div class="person-photo">
+                                <img src="{% static 'img/p.png' %}" alt="avatar">
+                            </div>
+                            <div class="person-content">
+                                <h1>Jiacheng Zhang</h1>
+                                <h2>Aspiring Software Engineer</h2>
+                            </div>
+                        </a>
+                    </div>
+
+                    <nav class="block navigation-block">
+                        <div class="block main-navigation">
+                            <div class="navigation-bg"></div>
+                            <div class="navigation-sidebar" id="navigation-sidebar">
+                                <ul>
+                                    <li class="{% if request.path == '/' %}current-page{% endif %}">
+                                        <a href="{% url 'portfolio-web-home' %}">PORTFOLIO</a>
+                                    </li>
+                                    <li class="{% if request.path == '/experience/' %}current-page{% endif %}">
+                                        <a href=" {% url 'portfolio-web-experience' %}">EXPERIENCE</a>
+                                    </li>
+                                    <li class="{% if request.path == '/education/' %}current-page{% endif %}">
+                                        <a href=" {% url 'portfolio-web-education' %}">EDUCATION</a>
+                                    </li>
+                                    <li class="{% if request.path == '/contact/' %}current-page{% endif %}">
+                                        <a href=" {% url 'portfolio-web-contact' %}">CONTACT ME</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://jzhangdeveloper-website.s3.amazonaws.com/resume/Resume2020.pdf"
+                                            target="_blank">RESUME</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="block social-block">
+                        <div class="social-block-title">
+                            GET IN TOUCH
+                        </div>
+                        <div class="social-block-content">
+                            <a href="mailto:jiachengzhang1@email.arizona.edu" target="_blank">
+                                <i class="fa-lg fas fa-envelope-square"></i>
+                            </a>
+                            <a href="https://github.com/jiachengzhang1" target="_blank">
+                                <i class="fa-lg fab fa-github-square"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jiachengzhang-developer/" target="_blank">
+                                <i class="fa-lg fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-top">
+                <div class="sidebar-title">
+                    <h1>Jiacheng Zhang</h1>
+                    <h2>Aspiring Software Engineer</h2>
+                </div>
+            </div>
+        </aside>
+
+        <div class="content-wrapper">
+            {% block content %} {% endblock %}
+        </div>
+
+    </div>
+
+
+    <script src="{% static 'js/sidebar.js' %}"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
