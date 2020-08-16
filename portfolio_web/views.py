@@ -10,7 +10,7 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "June",
 def home(request):
     projects = []
 
-    for project in Project.objects.all():
+    for project in Project.objects.order_by('priority'):
         projects.append({
             'date': months[project.date.month-1] + ", " + str(project.date.year),
             'title': project.title,
@@ -28,7 +28,7 @@ def home(request):
 def experience(request):
     experiences = []
 
-    for experience in Experience.objects.all():
+    for experience in Experience.objects.order_by('priority'):
         start = experience.startDate
         end = experience.endDate
         
@@ -73,7 +73,7 @@ def experience(request):
 
 def education(request):
     educations = []
-    for education in Education.objects.all():
+    for education in Education.objects.order_by('priority'):
         start = education.startDate
         end = education.endDate
         
