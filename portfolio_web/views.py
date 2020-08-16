@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Project
+from .models import Experience
 
+months = ["Jan", "Feb", "Mar", "Apr", "May", "June",
+          "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
 def home(request):
-    months = ["Jan", "Feb", "Mar", "Apr", "May", "June",
-              "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
-
     projects = []
 
     for project in Project.objects.all():
@@ -23,7 +23,31 @@ def home(request):
 
 
 def experience(request):
-    return render(request, 'portfolio_web/experience.html', {"title": "Experience"})
+    experiences = []
+
+    for experience in Experience.objects.all():
+        startMonth = experience.startDate.month
+        date = months[startMonth - 1] + " " + str(experience.startDate.year)
+
+        if experience.endDate != None:
+            endMonth = experience.endDate.month
+            date += (" –– " + months[startMonth - 1] + " " + str(experience.endDate.year))
+       
+        location = (experience.city + ", " + experience.state)
+
+        # footer = months[experience.date]
+        experiences.append({
+            'image': experience.image,
+            'title': experience.title,
+            'content': experience.content,
+            'position': experience.position,
+            'date': date,
+            'location': location
+        })
+
+    context = {"experiences":experiences, "title": "Experience"}
+
+    return render(request, 'portfolio_web/experience.html', context)
 
 
 def education(request):

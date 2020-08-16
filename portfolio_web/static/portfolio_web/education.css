@@ -1,0 +1,62 @@
+.education-page h1 {
+    font-size: 36px;
+}
+
+/* .educations {
+
+} */
+
+.education-card {
+    border: 1px solid #4169e1af;
+    max-width: 500px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.education-card-title {
+    padding: 8px;
+    border-radius: 5px 5px 0 0;
+}
+
+.education-card-title h6 {
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.education-card-content {
+    padding: 8px;
+}
+
+.education-card-footer {
+    padding: 8px;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid #4169e185;
+    background: #e4ebff83;
+}
+
+.education-date {
+    font-size: 14px;
+    font-weight: 600;
+    width: 145px;
+    border-radius: 10px;
+    padding: 1px;
+    background: #fada5e;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 350px) {
+    .education-card-title h6 {
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .education-date {
+        font-size: 13px;
+    }
+
+    .education-card-footer {
+        font-size: 14px;
+    }
+}

@@ -34,13 +34,13 @@
             <div class="sitebar">
                 <div class="sitebar-inner">
                     <div class="block">
-                        <a class="person" href="#">
+                        <a class="person" href="{% url 'portfolio-web-home' %}">
                             <div class="person-photo">
                                 <img src="{% static 'img/p.png' %}" alt="avatar">
                             </div>
                             <div class="person-content">
                                 <h1>Jiacheng Zhang</h1>
-                                <h2>Aspiring Software Engineer</h2>
+                                <h2>Software Developer</h2>
                             </div>
                         </a>
                     </div>
@@ -89,15 +89,42 @@
                 </div>
             </div>
             <div class="sidebar-top">
+                <div class="sidebar-bg" onclick="handleOnClick();" id="sidebar-bg">
+                    <i id="sidebar-bg-icon" class="fas fa-bars"></i>
+                </div>
                 <div class="sidebar-title">
                     <h1>Jiacheng Zhang</h1>
-                    <h2>Aspiring Software Engineer</h2>
+                    <h2>Software Developer</h2>
+                </div>
+            </div>
+            <div class="sidebar-dropdown" id="sidebar-dropdown">
+                <div class="dropdown-content">
+                    <nav>
+                        <ul>
+                            <li class="{% if request.path == '/' %}current-page{% endif %}">
+                                <a href="{% url 'portfolio-web-home' %}">PORTFOLIO</a>
+                            </li>
+                            <li class="{% if request.path == '/experience/' %}current-page{% endif %}">
+                                <a href=" {% url 'portfolio-web-experience' %}">EXPERIENCE</a>
+                            </li>
+                            <li class="{% if request.path == '/education/' %}current-page{% endif %}">
+                                <a href=" {% url 'portfolio-web-education' %}">EDUCATION</a>
+                            </li>
+                            <li class="{% if request.path == '/contact/' %}current-page{% endif %}">
+                                <a href=" {% url 'portfolio-web-contact' %}">CONTACT ME</a>
+                            </li>
+                            <li>
+                                <a href="https://jzhangdeveloper-website.s3.amazonaws.com/resume/Resume2020.pdf"
+                                    target="_blank">RESUME</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </aside>
 
         <div class="content-wrapper">
-            {% block content %} {% endblock %}
+            {% block content %}{% endblock %}
         </div>
 
     </div>

@@ -4,65 +4,28 @@
 <section>
     <div class="experience-page">
         <h1>EXPERIENCES</h1>
+        <p>Here's my working experiences</p>
         <div class="experienses">
+            {% for experience in experiences %}
             <div class="experience-card">
                 <div class="experience-card-header">
                     <div class="experience-card-header-content">
-                        <img src="{% static 'img/ua.png' %}" alt="job-logo" height="38px">
-                        <h3>Experience</h3>
-                        <h4>Full-Stack Software Developer</h4>
+                        <img src="{{ experience.image.url }}" alt="job-logo" height="38px">
+                        <h3>{{ experience.title }}</h3>
+                        <h4>{{ experience.position }}</h4>
                     </div>
                     <hr>
                 </div>
                 <div class="experience-card-content">
-                    <h4>Full-Stack Software Developer</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially</p>
+                    <h4>{{ experience.position }}</h4>
+                    {{ experience.content|safe }}
                 </div>
                 <div class="experience-card-footer">
-                    Jan 2016 - Present | Tucson, AZ
+                    {{ experience.date }}
+                    {{ experience.location }}
                 </div>
             </div>
-
-            <div class="experience-card">
-                <div class="experience-card-header">
-                    <div class="experience-card-header-content">
-                        <h3>Experience</h3>
-                        <h4>Full-Stack Software Developer</h4>
-                    </div>
-                    <hr>
-                </div>
-                <div class="experience-card-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially</p>
-                </div>
-                <div class="experience-card-footer">
-                    Jan 2016 - Present | Tucson, AZ
-                </div>
-            </div>
-
-            <div class="experience-card">
-                <div class="experience-card-header">
-                    <div class="experience-card-header-content">
-                        <h3>Experience</h3>
-                        <h4>Full-Stack Software Developer</h4>
-                    </div>
-                    <hr>
-                </div>
-                <div class="experience-card-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially</p>
-                </div>
-                <div class="experience-card-footer">
-                    Jan 2016 - Present | Tucson, AZ
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
