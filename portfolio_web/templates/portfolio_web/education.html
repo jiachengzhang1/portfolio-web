@@ -6,35 +6,22 @@
         <h1>Education</h1>
         <p>I am currently a graduate student studying Computer Science at the University of Arizona.</p>
         <div class="educations">
+            {% for education in educations %}
             <div class="education-card">
                 <div class="education-card-title">
-                    <h6>Master of Science in Computer Science</h6>
+                    <h6>{{ education.degree }}</h6>
                     <div class="education-date">
-                        Jan 2020 — Present
+                        {{ education.period }}
                     </div>
                 </div>
                 <div class="education-card-content">
-                    GPA: 4.0
+                    {{ education.content|safe }}
                 </div>
                 <div class="education-card-footer">
-                    The University of Arizona, Tucson, AZ
+                    {{ education.institution }}, {{ education.city }}, {{ education.state }}
                 </div>
             </div>
-
-            <div class="education-card">
-                <div class="education-card-title">
-                    <h6>Master of Science in Computer Science</h6>
-                    <div class="education-date">
-                        Jan 2020 — Present
-                    </div>
-                </div>
-                <div class="education-card-content">
-                    GPA: 4.0
-                </div>
-                <div class="education-card-footer">
-                    The University of Arizona, Tucson, AZ
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

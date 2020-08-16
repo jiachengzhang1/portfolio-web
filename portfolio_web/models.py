@@ -15,8 +15,8 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=100)
     content = RichTextField()
-    demoURL = models.URLField()
-    codeURL = models.URLField()
+    demoURL = models.URLField(null=True, blank=True)
+    codeURL = models.URLField(null=True, blank=True)
     technologies = models.ManyToManyField(Technology, related_name="project")
     image = models.ImageField(upload_to="projects", null=True, blank=True)
     date = models.DateField(null=True, blank=True)
@@ -42,3 +42,17 @@ class Experience(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Education(models.Model):
+    degree = models.CharField(max_length=100)
+    startDate = models.DateField(null=True, blank=True)
+    endDate = models.DateField(null=True, blank=True)
+    content = RichTextField()
+    institution = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.degree

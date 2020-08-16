@@ -18,8 +18,8 @@
                         <h5>{{ project.subtitle }}</h5>
                         {{ project.content|safe }}
                         <div class="project-links">
-                            <a class="project-demo" href="#">Demo</a>
-                            <a class="project-code" href="#">Code</a>
+                            <a class="project-demo" href="{{ project.demoURL }}" target="_blank">Demo</a>
+                            <a class="project-code" href="{{ project.codeURL }}" target="_blank">Code</a>
                         </div>
                         <div class="project-technologies">
                             <h5>TECHNOLOGIES</h5>
