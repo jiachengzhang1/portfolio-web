@@ -12,22 +12,24 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import json
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
+with open(os.path.join(BASE_DIR, 'config.json')) as configFile:
+    config = json.load(configFile)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'bpi2*2#w3_6xe@n_mq(h8wuc_2gk&*e*57$qzxl-vt*gg!beh@'
+SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config['DEBUG']
 
-ALLOWED_HOSTS = ['138.68.9.204']
-
+ALLOWED_HOSTS = [config['HOST_IP']]
 
 # Application definition
 
