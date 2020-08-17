@@ -12,7 +12,7 @@ class Technology(models.Model):
 
 
 class Project(models.Model):
-    priority = models.IntegerField(null=True, blank=True)
+    priority = models.IntegerField()
     title = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=100)
     content = RichTextField()
@@ -29,7 +29,7 @@ class Project(models.Model):
 
 
 class Experience(models.Model):
-    priority = models.IntegerField(null=True, blank=True)
+    priority = models.IntegerField()
     image = models.ImageField(upload_to="experiences")
     title = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
@@ -47,7 +47,7 @@ class Experience(models.Model):
 
 
 class Education(models.Model):
-    priority = models.IntegerField(null=True, blank=True)
+    priority = models.IntegerField()
     degree = models.CharField(max_length=100)
     startDate = models.DateField(null=True, blank=True)
     endDate = models.DateField(null=True, blank=True)
