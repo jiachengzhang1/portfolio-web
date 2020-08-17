@@ -3,6 +3,14 @@ from django.utils import timezone
 from ckeditor.fields import RichTextField
 
 
+class Summary(models.Model):
+    page = models.CharField(max_length=100)
+    summary = models.TextField()
+
+    def __str__(self):
+        return self.page
+    
+
 class Technology(models.Model):
     name = models.CharField(max_length=20)
     link = models.URLField()

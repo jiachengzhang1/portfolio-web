@@ -22,7 +22,7 @@ def home(request):
             'technologies': [{'name': v.name, 'link': v.link} for v in project.technologies.all()]
         })
 
-    context = {'projects': projects}
+    context = {'projects': projects, "title": "Project", 'analyticsId': 'UA-175463383-1'}
     return render(request, 'portfolio_web/home.html', context)
 
 
@@ -56,7 +56,7 @@ def experience(request):
             'location': location
         })
 
-    context = {"experiences":experiences, "title": "Experience"}
+    context = {"experiences":experiences, "title": "Experience", 'analyticsId': 'UA-175463383-1'}
 
     return render(request, 'portfolio_web/experience.html', context)
 
@@ -89,7 +89,7 @@ def education(request):
             'period': period
         })
 
-    return render(request, 'portfolio_web/education.html', {"educations": educations, "title": "Education"})
+    return render(request, 'portfolio_web/education.html', {"educations": educations, "title": "Education", 'analyticsId': 'UA-175463383-1'})
 
 
 def contact(request):

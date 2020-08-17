@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jzhangdeveloper.com/sitemap.xml
+Sitemap: https://www.jzhangdeveloper.com/sitemap.xml
+Sitemap: http://jzhangdeveloper.com/sitemap.xml
+Sitemap: http://www.jzhangdeveloper.com/sitemap.xml
