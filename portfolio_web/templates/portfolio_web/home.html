@@ -24,10 +24,7 @@
                         <div class="project-technologies">
                             <h6>TECHNOLOGIES</h6>
                             {% for technology in project.technologies %}
-                            <a class="technology" href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
-                            <!-- <div class="technology">
-                                <a href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
-                            </div> -->
+                            <a href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
                             {% endfor %}
                         </div>
                     </div>
