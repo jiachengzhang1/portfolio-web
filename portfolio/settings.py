@@ -2,10 +2,6 @@ from pathlib import Path
 import os
 import json
 
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-
-with open(os.path.join(BASE_DIR, 'config.json')) as configFile:
-    config = json.load(configFile)
 
 if os.getenv('BUILD_ON_TRAVIS', None):
     SECRET_KEY = "SecretKeyForUseOnTravis"
@@ -22,6 +18,11 @@ if os.getenv('BUILD_ON_TRAVIS', None):
         }
     }
 else:
+    BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+
+    with open(os.path.join(BASE_DIR, 'config.json')) as configFile:
+        config = json.load(configFile)
+
     SECRET_KEY = config['SECRET_KEY']
 
     DEBUG = config['DEBUG']
