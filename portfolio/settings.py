@@ -17,6 +17,7 @@ if os.getenv('BUILD_ON_TRAVIS', None):
             'HOST': '127.0.0.1',
         }
     }
+    ALLOWED_HOSTS = ['127.0.0.1']
 else:
     BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -46,7 +47,7 @@ else:
             }
         }
 
-ALLOWED_HOSTS = config['HOST_IP']
+    ALLOWED_HOSTS = config['HOST_IP']
 
 # Application definition
 INSTALLED_APPS = [
