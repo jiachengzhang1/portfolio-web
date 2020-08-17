@@ -1,16 +1,5 @@
-/* .experienses {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-} */
-
 .experience-page {
     overflow-x: hidden;
-}
-
-.experience-page h1{
-    font-size: 36px;
 }
 
 .experience-card {

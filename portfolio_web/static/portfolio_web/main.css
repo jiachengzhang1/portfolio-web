@@ -3,10 +3,6 @@ body {
     background: #faf1e665;
 }
 
-.main-wrapper {
-    /* height: 100vh; */
-}
-
 .sitebar {
     display: block;
     position: absolute;
@@ -70,9 +66,6 @@ body {
 
 .person h2 {
     font-size: 22px;
-}
-
-.person h2 {
     font-weight: 100;
 }
 
@@ -95,16 +88,16 @@ body {
 
 }
 
-.dropdown-content li {
+.sidebar-dropdown li {
     list-style: none;
     padding: 10px;
 }
 
-.dropdown-content ul {
+.sidebar-dropdown ul {
     padding: 0;
 }
 
-.dropdown-content a {
+.sidebar-dropdown a {
     text-decoration: none;
     color: white;
 }

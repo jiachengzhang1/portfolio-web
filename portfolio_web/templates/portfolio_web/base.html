@@ -6,6 +6,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Open Graph data -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jiacheng Zhang" />
+    <meta property="og:url" content="jzhangdeveloper.com" />
+    <meta property="og:image" content="" />
+    <meta property="og:description"
+        content="A portfolio website for Jiacheng Zhang, a software developer and a graduate student at the University of Arizona studying Computer Science." />
+
+    <meta property="article:publisher" content="jzhangdeveloper.com" />
+    <meta name="author" content="Jiacheng Zhang" />
+    <meta name="description"
+        content="A portfolio website for Jiacheng Zhang, a software developer and a graduate student at the University of Arizona studying Computer Science." />
+
+    <meta name="robots" content="index, follow" />
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -29,77 +49,22 @@
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <aside>
-            <div class="sitebar">
-                <div class="sitebar-inner">
-                    <div class="block">
-                        <a class="person" href="{% url 'portfolio-web-home' %}">
-                            <div class="person-photo">
-                                <img src="{% static 'img/p.png' %}" alt="avatar">
-                            </div>
-                            <div class="person-content">
-                                <h1>Jiacheng Zhang</h1>
-                                <h2>Software Developer</h2>
-                            </div>
-                        </a>
-                    </div>
-
-                    <nav class="block navigation-block">
-                        <div class="block main-navigation">
-                            <div class="navigation-bg"></div>
-                            <div class="navigation-sidebar" id="navigation-sidebar">
-                                <ul>
-                                    <li class="{% if request.path == '/' %}current-page{% endif %}">
-                                        <a href="{% url 'portfolio-web-home' %}">PORTFOLIO</a>
-                                    </li>
-                                    <li class="{% if request.path == '/experience/' %}current-page{% endif %}">
-                                        <a href=" {% url 'portfolio-web-experience' %}">EXPERIENCE</a>
-                                    </li>
-                                    <li class="{% if request.path == '/education/' %}current-page{% endif %}">
-                                        <a href=" {% url 'portfolio-web-education' %}">EDUCATION</a>
-                                    </li>
-                                    <li class="{% if request.path == '/contact/' %}current-page{% endif %}">
-                                        <a href=" {% url 'portfolio-web-contact' %}">CONTACT ME</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://jzhangdeveloper-website.s3.amazonaws.com/resume/Resume2020.pdf"
-                                            target="_blank">RESUME</a>
-                                    </li>
-                                </ul>
-                            </div>
+    <aside>
+        <div class="sitebar">
+            <div class="sitebar-inner">
+                <div class="block">
+                    <a class="person" href="{% url 'portfolio-web-home' %}">
+                        <div class="person-photo">
+                            <img src="{% static 'img/p.png' %}" alt="avatar">
                         </div>
-                    </nav>
-                    <div class="block social-block">
-                        <div class="social-block-title">
-                            GET IN TOUCH
+                        <div class="person-content">
+                            <h1>Jiacheng Zhang</h1>
+                            <h2>Software Developer</h2>
                         </div>
-                        <div class="social-block-content">
-                            <a href="mailto:jiachengzhang1@email.arizona.edu" target="_blank">
-                                <i class="fa-lg fas fa-envelope-square"></i>
-                            </a>
-                            <a href="https://github.com/jiachengzhang1" target="_blank">
-                                <i class="fa-lg fab fa-github-square"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jiachengzhang-developer/" target="_blank">
-                                <i class="fa-lg fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
-            </div>
-            <div class="sidebar-top">
-                <div class="sidebar-bg" onclick="handleOnClick();" id="sidebar-bg">
-                    <i id="sidebar-bg-icon" class="fas fa-bars"></i>
-                </div>
-                <div class="sidebar-title">
-                    <h1>Jiacheng Zhang</h1>
-                    <h2>Software Developer</h2>
-                </div>
-            </div>
-            <div class="sidebar-dropdown" id="sidebar-dropdown">
-                <div class="dropdown-content">
-                    <nav>
+                <nav class="block navigation-block">
+                    <div class="navigation-sidebar" id="navigation-sidebar">
                         <ul>
                             <li class="{% if request.path == '/' %}current-page{% endif %}">
                                 <a href="{% url 'portfolio-web-home' %}">PORTFOLIO</a>
@@ -118,17 +83,66 @@
                                     target="_blank">RESUME</a>
                             </li>
                         </ul>
-                    </nav>
+                    </div>
+                </nav>
+                <div class="block social-block">
+                    <div class="social-block-title">
+                        GET IN TOUCH
+                    </div>
+                    <div class="social-block-content">
+                        <a href="mailto:jiachengzhang1@email.arizona.edu" target="_blank">
+                            <i class="fa-lg fas fa-envelope-square"></i>
+                        </a>
+                        <a href="https://github.com/jiachengzhang1" target="_blank">
+                            <i class="fa-lg fab fa-github-square"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jiachengzhang-developer/" target="_blank">
+                            <i class="fa-lg fab fa-linkedin"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </aside>
+        </div>
+        <header>
+            <div class="sidebar-top">
+                <div class="sidebar-bg" onclick="handleOnClick();" id="sidebar-bg">
+                    <i id="sidebar-bg-icon" class="fas fa-bars"></i>
+                </div>
+                <div class="sidebar-title">
+                    <h1>Jiacheng Zhang</h1>
+                    <h2>Software Developer</h2>
+                </div>
+            </div>
+            <nav>
+                <div class="sidebar-dropdown" id="sidebar-dropdown">
+                    <ul>
+                        <li class="{% if request.path == '/' %}current-page{% endif %}">
+                            <a href="{% url 'portfolio-web-home' %}">PORTFOLIO</a>
+                        </li>
+                        <li class="{% if request.path == '/experience/' %}current-page{% endif %}">
+                            <a href=" {% url 'portfolio-web-experience' %}">EXPERIENCE</a>
+                        </li>
+                        <li class="{% if request.path == '/education/' %}current-page{% endif %}">
+                            <a href=" {% url 'portfolio-web-education' %}">EDUCATION</a>
+                        </li>
+                        <li class="{% if request.path == '/contact/' %}current-page{% endif %}">
+                            <a href=" {% url 'portfolio-web-contact' %}">CONTACT ME</a>
+                        </li>
+                        <li>
+                            <a href="https://jzhangdeveloper-website.s3.amazonaws.com/resume/Resume2020.pdf"
+                                target="_blank">RESUME</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </aside>
 
+    <main>
         <div class="content-wrapper">
             {% block content %}{% endblock %}
         </div>
-
-    </div>
-
+    </main>
 
     <script src="{% static 'js/sidebar.js' %}"></script>
 

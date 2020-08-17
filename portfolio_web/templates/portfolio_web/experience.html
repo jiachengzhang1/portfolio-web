@@ -1,31 +1,35 @@
 {% extends 'portfolio_web/base.html' %}
 {% load static %}
 {% block content %}
-<section>
-    <div class="experience-page">
-        <h1>EXPERIENCES</h1>
+<div class="experience-page">
+    <summary>
+        <h2>EXPERIENCES</h2>
         <p>Here's my working experiences</p>
+    </summary>
+    <article>
         <div class="experienses">
             {% for experience in experiences %}
-            <div class="experience-card">
-                <div class="experience-card-header">
-                    <div class="experience-card-header-content">
-                        <img src="{{ experience.image.url }}" alt="job-logo" height="38px">
-                        <h3>{{ experience.title }}</h3>
-                        <h4>{{ experience.position }}</h4>
+            <section>
+                <div class="experience-card">
+                    <div class="experience-card-header">
+                        <div class="experience-card-header-content">
+                            <img src="{{ experience.image.url }}" alt="job-logo" height="38px">
+                            <h3>{{ experience.title }}</h3>
+                            <h4>{{ experience.position }}</h4>
+                        </div>
+                        <hr>
                     </div>
-                    <hr>
+                    <div class="experience-card-content">
+                        <h4>{{ experience.position }}</h4>
+                        {{ experience.content|safe }}
+                    </div>
+                    <div class="experience-card-footer">
+                        {{ experience.date }} &nbsp;&nbsp;<b>|</b>&nbsp;&nbsp; {{ experience.location }}
+                    </div>
                 </div>
-                <div class="experience-card-content">
-                    <h4>{{ experience.position }}</h4>
-                    {{ experience.content|safe }}
-                </div>
-                <div class="experience-card-footer">
-                    {{ experience.date }} &nbsp;&nbsp;<b>|</b>&nbsp;&nbsp; {{ experience.location }}
-                </div>
-            </div>
+            </section>
             {% endfor %}
         </div>
-    </div>
-</section>
+    </article>
+</div>
 {% endblock content %}

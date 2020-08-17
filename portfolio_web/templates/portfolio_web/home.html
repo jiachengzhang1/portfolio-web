@@ -1,44 +1,49 @@
 {% extends 'portfolio_web/base.html' %}
-
 {% block content %}
-<section>
-    <div class="portfolio-page">
-        <h1>PORTFOLIO</h1>
-        <p>See my works below. Unless explicitly stated otherwise, projects were completely done by me from front-end to
-            back-end.</p>
+<div class="portfolio-page">
+    <summary>
+        <h2>PORTFOLIO</h2>
+        <p>
+            See my works below. Unless explicitly stated otherwise, projects were completely done by me from front-end
+            to back-end.
+        </p>
+    </summary>
+    <article>
         <div class="portfolio-content">
             {% for project in projects %}
-            <div class="project">
-                <div class="project-date">
-                    <span>{{ project.date }}</span>
-                </div>
-                <div class="project-content">
-                    <div class="text-content {% if project.image %}half{% endif %}">
-                        <h3>{{ project.title }}</h3>
-                        <h5><em>{{ project.subtitle }}</em></h5>
-                        {{ project.content|safe }}
-                        <div class="project-links">
-                            <a class="project-demo" href="{{ project.demoURL }}" target="_blank">Demo</a>
-                            <a class="project-code" href="{{ project.codeURL }}" target="_blank">Code</a>
-                        </div>
-                        <div class="project-technologies">
-                            <h6>TECHNOLOGIES</h6>
-                            {% for technology in project.technologies %}
-                            <a href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
-                            {% endfor %}
-                        </div>
+            <section>
+                <div class="project">
+                    <div class="project-date">
+                        <span>{{ project.date }}</span>
                     </div>
-                    {% if project.image %}
-                    <div class="img-content">
-                        <div class="project-image">
-                            <img class="img-fluid" src="{{ project.image.url }}">
+                    <div class="project-content">
+                        <div class="text-content {% if project.image %}half{% endif %}">
+                            <h3>{{ project.title }}</h3>
+                            <h5><em>{{ project.subtitle }}</em></h5>
+                            {{ project.content|safe }}
+                            <div class="project-links">
+                                <a class="project-demo" href="{{ project.demoURL }}" target="_blank">Demo</a>
+                                <a class="project-code" href="{{ project.codeURL }}" target="_blank">Code</a>
+                            </div>
+                            <div class="project-technologies">
+                                <h6>TECHNOLOGIES</h6>
+                                {% for technology in project.technologies %}
+                                <a href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
+                                {% endfor %}
+                            </div>
                         </div>
+                        {% if project.image %}
+                        <div class="img-content">
+                            <div class="project-image">
+                                <img class="img-fluid" src="{{ project.image.url }}">
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
-                    {% endif %}
                 </div>
-            </div>
+            </section>
             {% endfor %}
         </div>
-    </div>
-</section>
+    </article>
+</div>
 {% endblock content %}
