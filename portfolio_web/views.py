@@ -50,7 +50,6 @@ def experience(request):
         experiences.append({
             'image': experience.image,
             'title': experience.title,
-            'subtitle': experience.subtitle,
             'content': experience.content,
             'position': experience.position,
             'date': period,
