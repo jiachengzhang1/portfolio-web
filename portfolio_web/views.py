@@ -14,6 +14,7 @@ def home(request):
         projects.append({
             'date': months[project.date.month-1] + ", " + str(project.date.year),
             'title': project.title,
+            'subtitle': project.subtitle,
             'content': project.content,
             'image': project.image,
             'demoURL': project.demoURL,
@@ -44,22 +45,12 @@ def experience(request):
             period += " –– "
             period += "Present"
 
-
-        # startMonth = experience.startDate.month
-        # date = months[startMonth - 1] + " " + str(experience.startDate.year)
-
-        # if experience.endDate != None:
-        #     endMonth = experience.endDate.month
-        #     date += (" –– " + months[startMonth - 1] + " " + str(experience.endDate.year))
-        # else:
-        #     date += (" –– " + "Present")
-
-
         location = (experience.city + ", " + experience.state)
 
         experiences.append({
             'image': experience.image,
             'title': experience.title,
+            'subtitle': experience.subtitle,
             'content': experience.content,
             'position': experience.position,
             'date': period,

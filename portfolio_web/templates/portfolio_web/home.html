@@ -15,16 +15,19 @@
                 <div class="project-content">
                     <div class="text-content {% if project.image %}half{% endif %}">
                         <h3>{{ project.title }}</h3>
-                        <h5>{{ project.subtitle }}</h5>
+                        <h5><em>{{ project.subtitle }}</em></h5>
                         {{ project.content|safe }}
                         <div class="project-links">
                             <a class="project-demo" href="{{ project.demoURL }}" target="_blank">Demo</a>
                             <a class="project-code" href="{{ project.codeURL }}" target="_blank">Code</a>
                         </div>
                         <div class="project-technologies">
-                            <h5>TECHNOLOGIES</h5>
+                            <h6>TECHNOLOGIES</h6>
                             {% for technology in project.technologies %}
-                            <a href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
+                            <a class="technology" href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
+                            <!-- <div class="technology">
+                                <a href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
+                            </div> -->
                             {% endfor %}
                         </div>
                     </div>
