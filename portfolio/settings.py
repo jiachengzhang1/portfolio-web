@@ -5,7 +5,7 @@ import json
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-if os.getenv('BUILD_ON_TRAVIS', None) == False:
+if os.getenv('BUILD_ON_TRAVIS', None):
     SECRET_KEY = "SecretKeyForUseOnTravis"
     DEBUG = False
     TEMPLATE_DEBUG = True
