@@ -5,21 +5,10 @@ import json
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-if os.getenv('BUILD_ON_TRAVIS', None):
+if os.getenv('BUILD_ON_TRAVIS', None) == False:
     SECRET_KEY = "SecretKeyForUseOnTravis"
     DEBUG = False
     TEMPLATE_DEBUG = True
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'travis_ci_db',
-            'USER': 'travis',
-            'PASSWORD': '',
-            'HOST': '127.0.0.1',
-        }
-    }
-    ALLOWED_HOSTS = ['127.0.0.1']
 else:
     with open(os.path.join(BASE_DIR, 'config.json')) as configFile:
         config = json.load(configFile)
