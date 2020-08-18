@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% if analyticsId %}
+    {% include "portfolio_web/headElements/googleAnalytics.html" with analyticsId=analyticsId%}
+    {% endif %}
+
+    {% include "portfolio_web/headElements/metaTags.html" %}
+
+    {% include "portfolio_web/headElements/linkTags.html" %}
+
+    {% if title %}
+    <title>Jiacheng Zhang - {{ title }}</title>
+    {% else %}
+    <title>Jiacheng Zhang</title>
+    {% endif %}
+</head>
+
+<body>
+    <aside>
+        <div class="sitebar">
+            <div class="sitebar-inner">
+                <div class="block">
+                    <a class="person" href="{% url 'portfolio-web-project' %}">
+                        <div class="person-photo">
+                            <img src="{% static 'img/avatar.png' %}" alt="avatar">
+                        </div>
+                        <div class="person-content">
+                            <h1>Jiacheng Zhang</h1>
+                            <h2>Software Developer</h2>
+                        </div>
+                    </a>
+                </div>
+                <nav class="block navigation-block">
+                    <div class="navigation-sidebar" id="navigation-sidebar">
+                        {% include "portfolio_web/components/navList.html" %}
+                    </div>
+                </nav>
+                <div class="block social-block">
+                    {% include "portfolio_web/components/social.html" %}
+                </div>
+            </div>
+        </div>
+        {% include "portfolio_web/components/header.html" %}
+    </aside>
+
+    <main>
+        <div class="content-wrapper">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    {% include "portfolio_web/components/scripts.html" %}
+</body>
+
+</html>

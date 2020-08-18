@@ -23,7 +23,7 @@ def home(request):
         })
 
     context = {'projects': projects, "title": "Project", 'analyticsId': 'UA-175463383-1'}
-    return render(request, 'portfolio_web/home.html', context)
+    return render(request, 'portfolio_web/pages/project.html', context)
 
 
 def experience(request):
@@ -58,7 +58,7 @@ def experience(request):
 
     context = {"experiences":experiences, "title": "Experience", 'analyticsId': 'UA-175463383-1'}
 
-    return render(request, 'portfolio_web/experience.html', context)
+    return render(request, 'portfolio_web/pages/experience.html', context)
 
 
 def education(request):
@@ -89,8 +89,8 @@ def education(request):
             'period': period
         })
 
-    return render(request, 'portfolio_web/education.html', {"educations": educations, "title": "Education", 'analyticsId': 'UA-175463383-1'})
+    return render(request, 'portfolio_web/pages/education.html', {"educations": educations, "title": "Education", 'analyticsId': 'UA-175463383-1'})
 
 
 def contact(request):
-    return render(request, 'portfolio_web/contact.html', {"title": "Contact Me"})
+    return render(request, 'portfolio_web/pages/contact.html', {"title": "Contact Me"})
