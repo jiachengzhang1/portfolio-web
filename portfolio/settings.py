@@ -34,11 +34,11 @@ else:
         DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'portfolio',
-                'USER': 'jack',
-                'PASSWORD': 'a449834472',
-                'HOST': 'localhost',
-                'PORT': '',
+                'NAME': config['DB_NAME'],
+                'USER': config['DB_USER'],
+                'PASSWORD': config['DB_PASSWORD'],
+                'HOST': config['DB_HOST'],
+                'PORT': config['DB_PORT'],
             }
         }
 
