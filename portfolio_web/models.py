@@ -16,6 +16,7 @@ class WebsiteInfo(models.Model):
     email = models.EmailField(default='jiachengzhang1@email.arizona.edu')
     github = models.URLField(default='https://github.com/jiachengzhang1')
     linkedIn = models.URLField(default='www.linkedin.com/in/jiachengzhang-developer')
+    resumeLink = models.URLField()
 
     def __str__(self):
         return self.url

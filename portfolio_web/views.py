@@ -10,9 +10,8 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "June",
 
 default_context = {'analyticsId': 'UA-175463383-1'}
 
-website_info = WebsiteInfo.objects.first()
-
 def home(request):
+    website_info = WebsiteInfo.objects.first()
     projects = []
 
     for project in Project.objects.order_by('priority'):
@@ -30,7 +29,7 @@ def home(request):
     context = merge_context(default_context, {
         'projects': projects,
         "page_title": "Project",
-        'header_paragraph': website_info.portfolioPageHeader,
+        'header_paragraph': website_info.portfolioPageHeader if website_info != None else '',
         'header': 'PORTFOLIO'
     })
 
@@ -38,6 +37,7 @@ def home(request):
 
 
 def experience(request):
+    website_info = WebsiteInfo.objects.first()
     experiences = []
 
     for experience in Experience.objects.order_by('priority'):
@@ -70,7 +70,7 @@ def experience(request):
     context = merge_context(default_context, {
         "experiences":experiences,
         "page_title": "Experience",
-        'header_paragraph': website_info.experiencePageHeader,
+        'header_paragraph': website_info.experiencePageHeader if website_info != None else '',
         'header': 'EXPERIENCES'
     })
 
@@ -78,6 +78,7 @@ def experience(request):
 
 
 def education(request):
+    website_info = WebsiteInfo.objects.first()
     educations = []
 
     for education in Education.objects.order_by('priority'):
@@ -108,7 +109,7 @@ def education(request):
     context = merge_context(default_context, {
         "educations": educations,
         "page_title": "Education",
-        'header_paragraph': website_info.educationPageHeader,
+        'header_paragraph': website_info.educationPageHeader if website_info != None else '',
         'header': 'Education'
     })
 
@@ -116,12 +117,14 @@ def education(request):
 
 
 def contact(request):
+    website_info = WebsiteInfo.objects.first()
+    
     context = merge_context(default_context, {
         "page_title": "Contact Me",
-        'header_paragraph': website_info.contactPageHeader,
+        'header_paragraph': website_info.contactPageHeader if website_info != None else '',
         'header': 'CONTACT ME'
     })
-    
+
     return render(request, 'portfolio_web/pages/contact.html', context)
 
 
