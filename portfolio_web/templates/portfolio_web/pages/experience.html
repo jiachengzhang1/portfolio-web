@@ -2,10 +2,6 @@
 {% load static %}
 {% block content %}
 <div class="experience-page">
-    <section>
-        <h2>EXPERIENCES</h2>
-        <p>Here's my working experiences</p>
-    </section>
     <article>
         <div class="experienses">
             {% for experience in experiences %}
@@ -13,7 +9,7 @@
                 <div class="experience-card">
                     <div class="experience-card-header">
                         <div class="experience-card-header-content">
-                            <img src="{{ experience.image.url }}" alt="experience" height="38px">
+                            <img src="{{ experience.image.url }}" alt="experience" height="38px" />
                             <h3>{{ experience.title }}</h3>
                             <h4>{{ experience.position }}</h4>
                         </div>

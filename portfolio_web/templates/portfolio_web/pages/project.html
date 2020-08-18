@@ -1,14 +1,6 @@
 {% extends 'portfolio_web/components/base.html' %}
 {% block content %}
 <div class="portfolio-page">
-    <section>
-        <h2>PORTFOLIO</h2>
-        <p>
-            <b>
-                See my personal and some work projects below. Unless explicitly stated otherwise, projects were completely done by me from front-end to back-end.
-            </b>
-        </p>
-    </section>
     <article>
         <div class="portfolio-content">
             {% for project in projects %}
@@ -36,7 +28,7 @@
                         {% if project.image %}
                         <div class="img-content">
                             <div class="project-image">
-                                <img class="img-fluid" src="{{ project.image.url }}" alt="project">
+                                <img class="img-fluid" src="{{ project.image.url }}" alt="project" />
                             </div>
                         </div>
                         {% endif %}

@@ -1,30 +1,26 @@
 {% extends 'portfolio_web/components/base.html' %}
 {% block content %}
 <div class="contact-page">
-    <section>
-        <h2>CONTACT ME</h2>
-        <p>I am seeking programming Intership and open to any ideas of cooperation.</p>
-    </section>
     <article>
         <div class="contact-detail">
             <span>E-mail: </span>
-            <a href="mailto:jiachengzhang1@email.arizona.edu" target="_blank">
+            <a href="mailto:{{ email }}" target="_blank">
                 <i class="fas fa-envelope"></i>
-                jiachengzhang1@email.arizona.edu
+                {{ email }}
             </a>
         </div>
         <div class="contact-detail">
             <span>GitHub: </span>
-            <a href="https://github.com/jiachengzhang1" target="_blank">
+            <a href="{{ github_link }}" target="_blank">
                 <i class="fab fa-github"></i>
-                jiachengzhang1
+                {{ github_name }}
             </a>
         </div>
         <div class="contact-detail">
             <span>LinkedIn: </span>
-            <a href="https://www.linkedin.com/in/jiachengzhang-developer/" target="_blank">
+            <a href="{{ linkedIn_link }}" target="_blank">
                 <i class="fab fa-linkedin-in"></i>
-                jiachengzhang-developer
+                {{ linkedIn_name }}
             </a>
         </div>
     </article>
