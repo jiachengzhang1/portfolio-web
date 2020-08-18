@@ -3,6 +3,25 @@ from django.utils import timezone
 from ckeditor.fields import RichTextField
 
 
+class WebsiteInfo(models.Model):
+    url = models.URLField()
+    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
+    webType = models.CharField(max_length=10)
+    portfolioPageHeader = models.TextField()
+    experiencePageHeader = models.TextField()
+    educationPageHeader = models.TextField()
+    contactPageHeader = models.TextField()
+    email = models.EmailField(default='jiachengzhang1@email.arizona.edu')
+    github = models.URLField(default='https://github.com/jiachengzhang1')
+    linkedIn = models.URLField(default='www.linkedin.com/in/jiachengzhang-developer')
+    resumeLink = models.URLField()
+
+    def __str__(self):
+        return self.url
+
+
 class Summary(models.Model):
     page = models.CharField(max_length=100)
     summary = models.TextField()

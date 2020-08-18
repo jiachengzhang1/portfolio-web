@@ -6,7 +6,7 @@ class HomeViewSitemap(Sitemap):
     priority = 1
 
     def items(self):
-        return ['portfolio-web-home']
+        return ['portfolio-web-project']
 
     def location(self, item):
         return reverse(item)

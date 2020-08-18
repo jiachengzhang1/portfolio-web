@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import WebsiteInfo
 from .models import Project
 from .models import Experience
 from .models import Education
@@ -7,7 +8,10 @@ from .models import Education
 months = ["Jan", "Feb", "Mar", "Apr", "May", "June",
           "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
+default_context = {'analyticsId': 'UA-175463383-1'}
+
 def home(request):
+    website_info = WebsiteInfo.objects.first()
     projects = []
 
     for project in Project.objects.order_by('priority'):
@@ -22,11 +26,18 @@ def home(request):
             'technologies': [{'name': v.name, 'link': v.link} for v in project.technologies.all()]
         })
 
-    context = {'projects': projects, "title": "Project", 'analyticsId': 'UA-175463383-1'}
-    return render(request, 'portfolio_web/home.html', context)
+    context = merge_context(default_context, {
+        'projects': projects,
+        "page_title": "Project",
+        'header_paragraph': website_info.portfolioPageHeader if website_info != None else '',
+        'header': 'PORTFOLIO'
+    })
+
+    return render(request, 'portfolio_web/pages/project.html', context)
 
 
 def experience(request):
+    website_info = WebsiteInfo.objects.first()
     experiences = []
 
     for experience in Experience.objects.order_by('priority'):
@@ -56,13 +67,20 @@ def experience(request):
             'location': location
         })
 
-    context = {"experiences":experiences, "title": "Experience", 'analyticsId': 'UA-175463383-1'}
+    context = merge_context(default_context, {
+        "experiences":experiences,
+        "page_title": "Experience",
+        'header_paragraph': website_info.experiencePageHeader if website_info != None else '',
+        'header': 'EXPERIENCES'
+    })
 
-    return render(request, 'portfolio_web/experience.html', context)
+    return render(request, 'portfolio_web/pages/experience.html', context)
 
 
 def education(request):
+    website_info = WebsiteInfo.objects.first()
     educations = []
+
     for education in Education.objects.order_by('priority'):
         start = education.startDate
         end = education.endDate
@@ -79,7 +97,6 @@ def education(request):
             period += " –– "
             period += "Present"
 
-
         educations.append({
             'degree': education.degree,
             'content': education.content,
@@ -89,8 +106,30 @@ def education(request):
             'period': period
         })
 
-    return render(request, 'portfolio_web/education.html', {"educations": educations, "title": "Education", 'analyticsId': 'UA-175463383-1'})
+    context = merge_context(default_context, {
+        "educations": educations,
+        "page_title": "Education",
+        'header_paragraph': website_info.educationPageHeader if website_info != None else '',
+        'header': 'Education'
+    })
+
+    return render(request, 'portfolio_web/pages/education.html', context)
 
 
 def contact(request):
-    return render(request, 'portfolio_web/contact.html', {"title": "Contact Me"})
+    website_info = WebsiteInfo.objects.first()
+    
+    context = merge_context(default_context, {
+        "page_title": "Contact Me",
+        'header_paragraph': website_info.contactPageHeader if website_info != None else '',
+        'header': 'CONTACT ME'
+    })
+
+    return render(request, 'portfolio_web/pages/contact.html', context)
+
+
+def merge_context(c1, c2):
+    context = {}
+    context.update(c1)
+    context.update(c2)
+    return context

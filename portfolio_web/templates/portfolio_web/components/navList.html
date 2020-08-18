@@ -1,0 +1,17 @@
+<ul>
+    <li class="{% if request.path == '/' %}current-page{% endif %}">
+        <a href="{% url 'portfolio-web-project' %}">PORTFOLIO</a>
+    </li>
+    <li class="{% if request.path == '/experience/' %}current-page{% endif %}">
+        <a href=" {% url 'portfolio-web-experience' %}">EXPERIENCE</a>
+    </li>
+    <li class="{% if request.path == '/education/' %}current-page{% endif %}">
+        <a href=" {% url 'portfolio-web-education' %}">EDUCATION</a>
+    </li>
+    <li class="{% if request.path == '/contact/' %}current-page{% endif %}">
+        <a href=" {% url 'portfolio-web-contact' %}">CONTACT ME</a>
+    </li>
+    <li>
+        <a href="{{ resume_link }}" target="_blank">RESUME</a>
+    </li>
+</ul>

@@ -9,6 +9,12 @@ if os.getenv('BUILD_ON_TRAVIS', None):
     SECRET_KEY = "SecretKeyForUseOnTravis"
     DEBUG = False
     TEMPLATE_DEBUG = True
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 else:
     with open(os.path.join(BASE_DIR, 'config.json')) as configFile:
         config = json.load(configFile)
@@ -28,11 +34,11 @@ else:
         DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'portfolio',
-                'USER': 'jack',
-                'PASSWORD': 'a449834472',
-                'HOST': 'localhost',
-                'PORT': '',
+                'NAME': config['DB_NAME'],
+                'USER': config['DB_USER'],
+                'PASSWORD': config['DB_PASSWORD'],
+                'HOST': config['DB_HOST'],
+                'PORT': config['DB_PORT'],
             }
         }
 
@@ -74,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'portfolio_web.context_processors.website_info',
             ],
         },
     },
