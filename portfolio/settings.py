@@ -7,8 +7,18 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 if os.getenv('BUILD_ON_TRAVIS', None):
     SECRET_KEY = "SecretKeyForUseOnTravis"
-    DEBUG = True
+    DEBUG = False
     TEMPLATE_DEBUG = True
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'portfolio',
+            'USER': 'jack',
+            'PASSWORD': 'a449834472',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 else:
     with open(os.path.join(BASE_DIR, 'config.json')) as configFile:
         config = json.load(configFile)
