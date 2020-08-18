@@ -11,12 +11,8 @@ if os.getenv('BUILD_ON_TRAVIS', None):
     TEMPLATE_DEBUG = True
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'portfolio',
-            'USER': 'jack',
-            'PASSWORD': 'a449834472',
-            'HOST': 'localhost',
-            'PORT': '',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 else:
