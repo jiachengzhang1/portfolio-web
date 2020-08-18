@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 if os.getenv('BUILD_ON_TRAVIS', None):
     SECRET_KEY = "SecretKeyForUseOnTravis"
-    DEBUG = False
+    DEBUG = True
     TEMPLATE_DEBUG = True
 else:
     with open(os.path.join(BASE_DIR, 'config.json')) as configFile:
