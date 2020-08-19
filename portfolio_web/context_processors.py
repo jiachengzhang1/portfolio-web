@@ -9,11 +9,16 @@ def website_info(request):
         github_name = get_name(github_link)
         linkedIn_link = website_info.linkedIn
         linkedIn_name = get_name(linkedIn_link)
+        avatar = website_info.avatar
+        if avatar == None:
+            avatar = ''
+
     else:
         github_link = ''
         github_name = ''
         linkedIn_link = ''
         linkedIn_name = ''
+        avatar = ''
 
     return { 
             'name': website_info.name if website_info != None else '', 
@@ -26,7 +31,8 @@ def website_info(request):
             'github_link': github_link,
             'linkedIn_name': linkedIn_name,
             'linkedIn_link': linkedIn_link,
-            'resume_link': website_info.resumeLink if website_info != None else ''
+            'resume_link': website_info.resumeLink if website_info != None else '',
+            'avatar': avatar
         }
 
 

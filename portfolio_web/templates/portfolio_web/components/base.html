@@ -24,9 +24,11 @@
             <div class="sitebar-inner">
                 <div class="block">
                     <a class="person" href="{% url 'portfolio-web-project' %}">
+                        {% if avatar != '' %}
                         <div class="person-photo">
-                            <img src="{% static 'img/avatar.png' %}" alt="avatar" />
+                            <img src="{{ avatar.url }}" alt="avatar" />
                         </div>
+                        {% endif %}
                         <div class="person-content">
                             <h1>{{ name }}</h1>
                             <h2>{{ title }}</h2>
