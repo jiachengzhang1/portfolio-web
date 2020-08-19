@@ -5,6 +5,7 @@ from ckeditor.fields import RichTextField
 
 class WebsiteInfo(models.Model):
     url = models.URLField()
+    avatar = models.ImageField(upload_to="web", null=True, blank=True)
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
