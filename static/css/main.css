@@ -1,0 +1,151 @@
+.btn-primary, .btn-tag, .btn-social, .btn-nav, .btn-nav-active {
+  width: fit-content;
+  text-decoration: none !important;
+  border-radius: 5px;
+  color: #f2f2f2; }
+  .btn-primary:hover, .btn-tag:hover, .btn-social:hover, .btn-nav:hover, .btn-nav-active:hover {
+    color: white; }
+
+.btn-nav, .btn-nav-active {
+  border-radius: 0;
+  padding: 6px 8px;
+  color: #d6d6d6; }
+  .btn-nav:hover, .btn-nav-active:hover {
+    background-color: #1d44b8;
+    border-radius: 5px; }
+
+.btn-nav-active {
+  color: white;
+  border-radius: 5px;
+  background-color: #1b3fab; }
+
+.btn-social {
+  color: #d6d6d6;
+  font-size: 22px; }
+  .btn-social:hover {
+    color: white; }
+
+.btn-tag {
+  color: white;
+  padding: 4px 18px;
+  background: #26b410;
+  border-radius: 50px; }
+  .btn-tag:hover {
+    background: #1c850c; }
+
+.btn-primary {
+  background: #4169E1;
+  padding: 8px 20px; }
+  .btn-primary:hover {
+    background: #1b3fab; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #faf1e665; }
+  body .sitebar {
+    position: absolute;
+    display: block;
+    left: 0;
+    height: 100vh;
+    width: 23vw;
+    padding: 10px 10px 10px 10px;
+    background-color: #4169E1;
+    color: white;
+    max-width: 300px; }
+    body .sitebar .sitebar-inner {
+      margin-top: 45px; }
+      body .sitebar .sitebar-inner > div, body .sitebar .sitebar-inner nav {
+        margin-bottom: 80px; }
+      body .sitebar .sitebar-inner ul, body .sitebar .sitebar-inner .social-block {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-left: 38px; }
+        body .sitebar .sitebar-inner ul li, body .sitebar .sitebar-inner .social-block li {
+          margin-bottom: 16px; }
+    body .sitebar .person {
+      text-align: center;
+      text-decoration: none;
+      color: white; }
+      body .sitebar .person img {
+        width: 152px;
+        height: 152px;
+        border-radius: 50%; }
+      body .sitebar .person h1 {
+        font-size: 28px; }
+      body .sitebar .person h2 {
+        font-size: 22px;
+        font-weight: 100; }
+    body .sitebar .social-block {
+      font-size: 14px; }
+    body .sitebar .social-block-content {
+      margin-top: 8px; }
+    @media (max-width: 1000px) {
+      body .sitebar {
+        display: none; } }
+  body header {
+    display: none; }
+    @media (max-width: 1000px) {
+      body header {
+        display: block; }
+        body header .sidebar-top {
+          background-color: #4169E1;
+          height: 64px;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        body header .sidebar-dropdown {
+          display: none;
+          background: #4169E1;
+          color: white;
+          text-align: center; }
+          body header .sidebar-dropdown ul {
+            padding: 0; }
+            body header .sidebar-dropdown ul li {
+              list-style: none;
+              padding: 10px; }
+              body header .sidebar-dropdown ul li a {
+                text-decoration: none;
+                color: white; }
+        body header .sidebar-title {
+          color: white;
+          text-align: center; }
+        body header h1 {
+          font-size: 24px;
+          margin-bottom: 1px; }
+        body header h2 {
+          font-size: 16px;
+          font-weight: 200;
+          margin-bottom: 2px; }
+        body header .sidebar-bg {
+          margin-right: 20px;
+          position: absolute;
+          right: 0;
+          font-size: 25px;
+          color: white; }
+          body header .sidebar-bg:hover {
+            cursor: pointer; } }
+    body header .show {
+      display: block !important; }
+  body .content-wrapper {
+    position: absolute;
+    display: block;
+    left: 300px;
+    height: 100vh;
+    width: 77vw;
+    padding: 20px 20px 20px 30px;
+    background-color: #faf1e665;
+    color: black;
+    overflow-y: auto; }
+    @media (max-width: 1300px) {
+      body .content-wrapper {
+        left: 23vw; } }
+    @media (max-width: 1000px) {
+      body .content-wrapper {
+        position: relative;
+        left: 0px;
+        width: 96vw;
+        padding: 20px 0 0 4vw;
+        overflow-y: initial; } }
+
+/*# sourceMappingURL=main.css.map */

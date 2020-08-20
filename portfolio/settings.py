@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'django.contrib.sitemaps',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -113,6 +114,15 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
+
+# Django Sass
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static') 
 
 
 # Static files (CSS, JavaScript, Images)

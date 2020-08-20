@@ -9,6 +9,8 @@
 
     {% include "portfolio_web/headElements/metaTags.html" %}
 
+    {% block stylesheet %}{% endblock %}
+
     {% include "portfolio_web/headElements/linkTags.html" %}
 
     {% if page_title %}
@@ -21,7 +23,7 @@
 <body>
     <aside>
         <div class="sitebar">
-            <div class="sitebar-inner">
+            <div class="sitebar-inner" id="sitebar-inner">
                 <div class="block">
                     <a class="person" href="{% url 'portfolio-web-project' %}">
                         {% if avatar != '' %}

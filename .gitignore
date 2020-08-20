@@ -8,6 +8,7 @@ __pycache__
 db.sqlite3
 media
 config.json
+portfolio_web_img
 
 # Backup files # 
 *.bak 
