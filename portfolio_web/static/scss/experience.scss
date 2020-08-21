@@ -39,6 +39,18 @@
                 display: none;
             }
         }
+
+        @media (max-width: 450px) {
+            padding: 6px;
+            h3 {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            img {
+                display: none;
+            }
+        }
     }
 
     .experience-card-content {
