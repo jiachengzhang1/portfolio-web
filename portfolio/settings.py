@@ -15,6 +15,7 @@ if os.getenv('BUILD_ON_TRAVIS', None):
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+    GOOGLE_ANALYTICS_ID = ""
 else:
     with open(os.path.join(BASE_DIR, 'config.json')) as configFile:
         config = json.load(configFile)
@@ -43,6 +44,8 @@ else:
         }
 
     ALLOWED_HOSTS = config['HOST_IP']
+
+    GOOGLE_ANALYTICS_ID = config['GOOGLE_ANALYTICS_ID']
 
 # Application definition
 INSTALLED_APPS = [
