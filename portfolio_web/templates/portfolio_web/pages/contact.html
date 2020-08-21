@@ -1,28 +1,32 @@
 {% extends 'portfolio_web/components/base.html' %}
+{% load sass_tags %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% sass_src 'scss/contact.scss' %}" />
+{% endblock %}
+
 {% block content %}
-<div class="contact-page">
-    <article>
-        <div class="contact-detail">
-            <span>E-mail: </span>
-            <a href="mailto:{{ email }}" target="_blank">
-                <i class="fas fa-envelope"></i>
-                {{ email }}
-            </a>
-        </div>
-        <div class="contact-detail">
-            <span>GitHub: </span>
-            <a href="{{ github_link }}" target="_blank">
-                <i class="fab fa-github"></i>
-                {{ github_name }}
-            </a>
-        </div>
-        <div class="contact-detail">
-            <span>LinkedIn: </span>
-            <a href="{{ linkedIn_link }}" target="_blank">
-                <i class="fab fa-linkedin-in"></i>
-                {{ linkedIn_name }}
-            </a>
-        </div>
-    </article>
-</div>
+<article>
+    <div class="contact-detail">
+        <span>E-mail: </span>
+        <a href="mailto:{{ email }}" target="_blank">
+            <i class="fas fa-envelope"></i>
+            {{ email }}
+        </a>
+    </div>
+    <div class="contact-detail">
+        <span>GitHub: </span>
+        <a href="{{ github_link }}" target="_blank">
+            <i class="fab fa-github"></i>
+            {{ github_name }}
+        </a>
+    </div>
+    <div class="contact-detail">
+        <span>LinkedIn: </span>
+        <a href="{{ linkedIn_link }}" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+            {{ linkedIn_name }}
+        </a>
+    </div>
+</article>
 {% endblock content %}

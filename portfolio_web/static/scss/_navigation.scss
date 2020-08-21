@@ -1,5 +1,12 @@
 .sitebar {
-    @include main-block($sidebar-color, $sidebar-width, 10px, 10px, 10px, 10px, 0, $text-color);
+    position: absolute;
+    display: block;
+    left: 0;
+    height: $max-height;
+    width: $sidebar-width;
+    padding: 10px 10px 10px 10px;
+    background-color: $sidebar-color;
+    color: $text-color;
     max-width: $sidebar-max-width;
 
     .sitebar-inner {

@@ -9,6 +9,7 @@ db.sqlite3
 media
 config.json
 portfolio_web_img
+/static/
 
 # Backup files # 
 *.bak 

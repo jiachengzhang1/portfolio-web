@@ -1,42 +1,42 @@
 {% extends 'portfolio_web/components/base.html' %}
+{% load sass_tags %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% sass_src 'scss/project.scss' %}" />
+{% endblock %}
+
 {% block content %}
-<div class="portfolio-page">
-    <article>
-        <div class="portfolio-content">
-            {% for project in projects %}
-            <section>
-                <div class="project">
-                    <div class="project-date">
-                        <span>{{ project.date }}</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="text-content {% if project.image %}half{% endif %}">
-                            <h3>{{ project.title }}</h3>
-                            <h5><em>{{ project.subtitle }}</em></h5>
-                            {{ project.content|safe }}
-                            <div class="project-links">
-                                <a class="btn-primary" href="{{ project.demoURL }}" target="_blank">Demo</a>
-                                <a class="btn-primary" href="{{ project.codeURL }}" target="_blank">Code</a>
-                            </div>
-                            <div class="project-technologies">
-                                <h6>TECHNOLOGIES</h6>
-                                {% for technology in project.technologies %}
-                                <a class="btn-tag" href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
-                                {% endfor %}
-                            </div>
+<article>
+    <div class="portfolio-content">
+        {% for project in projects %}
+        <section>
+            <div class="project">
+                <span>{{ project.date }}</span>
+                <div class="project-content">
+                    <div class="text-content {% if project.image %}half{% endif %}">
+                        <h3>{{ project.title }}</h3>
+                        <h5><em>{{ project.subtitle }}</em></h5>
+                        {{ project.content|safe }}
+                        <div class="project-links">
+                            <a class="btn-primary" href="{{ project.demoURL }}" target="_blank">Demo</a>
+                            <a class="btn-primary" href="{{ project.codeURL }}" target="_blank">Code</a>
                         </div>
-                        {% if project.image %}
-                        <div class="img-content">
-                            <div class="project-image">
-                                <img class="img-fluid" src="{{ project.image.url }}" alt="project" />
-                            </div>
+                        <div class="project-technologies">
+                            <h6>TECHNOLOGIES</h6>
+                            {% for technology in project.technologies %}
+                            <a class="btn-tag" href="{{ technology.link }}" target="_blank">{{technology.name}}</a>
+                            {% endfor %}
                         </div>
-                        {% endif %}
                     </div>
+                    {% if project.image %}
+                    <div class="img-content">
+                        <img class="img-fluid" src="{{ project.image.url }}" alt="project" />
+                    </div>
+                    {% endif %}
                 </div>
-            </section>
-            {% endfor %}
-        </div>
-    </article>
-</div>
+            </div>
+        </section>
+        {% endfor %}
+    </div>
+</article>
 {% endblock content %}

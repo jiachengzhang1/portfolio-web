@@ -1,28 +1,31 @@
 {% extends 'portfolio_web/components/base.html' %}
+{% load sass_tags %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% sass_src 'scss/education.scss' %}" />
+{% endblock %}
 
 {% block content %}
-<div class="education-page">
-    <article>
-        <div class="educations">
-            {% for education in educations %}
-            <section>
-                <div class="education-card">
-                    <div class="education-card-title">
-                        <h6>{{ education.degree }}</h6>
-                        <div class="education-date">
-                            {{ education.period }}
-                        </div>
-                    </div>
-                    <div class="education-card-content">
-                        {{ education.content|safe }}
-                    </div>
-                    <div class="education-card-footer">
-                        {{ education.institution }}, {{ education.city }}, {{ education.state }}
+<article>
+    <div class="educations">
+        {% for education in educations %}
+        <section>
+            <div class="education-card">
+                <div class="education-card-title">
+                    <h6>{{ education.degree }}</h6>
+                    <div class="education-date">
+                        {{ education.period }}
                     </div>
                 </div>
-            </section>
-            {% endfor %}
-        </div>
-    </article>
-</div>
+                <div class="education-card-content">
+                    {{ education.content|safe }}
+                </div>
+                <div class="education-card-footer">
+                    {{ education.institution }}, {{ education.city }}, {{ education.state }}
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+    </div>
+</article>
 {% endblock content %}

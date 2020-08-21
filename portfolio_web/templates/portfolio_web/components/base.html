@@ -1,22 +1,59 @@
 {% load static %}
+{% load sass_tags %}
 <!doctype html>
 <html lang="en">
 
 <head>
     {% if analyticsId %}
-    {% include "portfolio_web/headElements/googleAnalytics.html" with analyticsId=analyticsId %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ analyticsId }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', "{{ analyticsId }}");
+    </script>
     {% endif %}
 
-    {% include "portfolio_web/headElements/metaTags.html" %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+    <!-- Open Graph data -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="{{ type }}" />
+    <meta property="og:title" content="{{ name }}" />
+    <meta property="og:url" content="{{ url }}" />
+    <meta property="og:description"
+        content="{{ description }}" />
+
+    <meta property="article:publisher" content="{{ url }}" />
+    <meta name="author" content="{{ name }}" />
+    <meta name="description"
+        content="{{ description }}" />
+
+    <meta name="robots" content="index, follow" />
+
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="{% sass_src 'scss/main.scss' %}" />
     {% block stylesheet %}{% endblock %}
 
-    {% include "portfolio_web/headElements/linkTags.html" %}
+    <link rel="canonical" href="{{ url }}" />
+
+    <link rel=" icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-32x32.png' %}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-16x16.png' %}" sizes="16x16" />
 
     {% if page_title %}
-    <title>{{ name }} - {{ page_title }}</title>
+        <title>{{ name }} - {{ page_title }}</title>
     {% else %}
-    <title>{{ name }}</title>
+        <title>{{ name }}</title>
     {% endif %}
 </head>
 
@@ -27,9 +64,9 @@
                 <div class="block">
                     <a class="person" href="{% url 'portfolio-web-project' %}">
                         {% if avatar != '' %}
-                        <div class="person-photo">
-                            <img src="{{ avatar.url }}" alt="avatar" />
-                        </div>
+                            <div class="person-photo">
+                                <img src="{{ avatar.url }}" alt="avatar" />
+                            </div>
                         {% endif %}
                         <div class="person-content">
                             <h1>{{ name }}</h1>
@@ -60,7 +97,18 @@
         </div>
     </main>
     
-    {% include "portfolio_web/components/scripts.html" %}
+    <script src="{% static 'js/sidebar.js' %}"></script>
+
+    <!-- JavaScript for Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

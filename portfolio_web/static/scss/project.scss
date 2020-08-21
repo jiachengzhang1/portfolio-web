@@ -1,0 +1,126 @@
+@import 'variables';
+
+.portfolio-content {
+    padding: 0;
+
+    .text-content h5 {
+        font-size: 18px;
+        color: gray;
+    }
+    
+    .text-content {
+        float: left;
+    }
+    
+    .text-content.half {
+        min-height: 100%;
+        max-width: 45%;
+
+        @media (max-width: 1000px) {
+            max-width: 100%;
+        }
+    }
+    
+    .img-content {
+        margin-left: 3%;
+        min-height: 100%;
+        max-width: 50%;
+
+        img {
+            max-height: 400px;
+        }
+
+        @media (max-width: 1000px) {
+            margin-left: 0%;
+            max-width: 100%;
+        }
+    }
+ 
+    .project-technologies {
+        margin: 40px 0 0 0;
+        padding-bottom: 20px;
+
+        @media (max-width: 1000px) {
+            margin-top: 20px;
+        }
+    }
+
+    .project {
+        display: inline-block;
+        background: #dbf4fc;
+        padding: 15px 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+
+        span {
+            display: inline-block;
+            font-weight: bold;
+            padding: 0.2rem 0.4rem;
+            margin: -4px 0 1rem 0;
+            border-radius: 5px;
+            background: $date-tag-color;
+            font-size: 14px;
+
+            @media (min-width: 568px) { 
+                position: relative;
+                margin-left: -130px;
+                margin-top: 20px;
+            }
+        }
+
+        @media (min-width: 568px) {
+            background: none;
+            padding: 0;
+            margin-bottom: 0;
+            border-radius: none;
+        }
+
+    }
+
+    @media (min-width: 568px) {
+        margin-left: 100px;
+        padding: 0 10px 0 28px;
+        border-left: 2px solid #a8a4a4;
+
+        .project-content {
+            display: flex;
+            padding: 20px 25px;
+            border: 1px solid #cbe2fd;
+            border-radius: 6px;
+            border-top-left-radius: 3px;
+            background: #e6f9ff60;
+            position: relative;
+            margin-bottom: 20px;
+            margin-top: -47px;
+
+            @media (max-width: 1000px) {
+                flex-direction: column;
+            }
+
+            &:before {
+                content: " ";
+                position: absolute;
+                display: block;
+                background: $sidebar-color;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                top: 10px;
+                left: -35px;
+            }
+
+            &:after {
+                content: " ";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-color: transparent #cbe2fd transparent transparent;
+                border-width: 15px;
+                position: absolute;
+                top: 0px;
+                left: -31px;
+            }
+        }
+    }
+}
+

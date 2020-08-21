@@ -6,6 +6,9 @@ $date-tag-color: #fada5e;
 $technology-tag-color: #26b410;
 $link-text-color: rgba(255, 255, 255, 0.6);
 $link-text-hover-color: white;
+$card-border-color: lighten($color: $sidebar-color, $amount: 22);
+$card-footer-border-top-color: lighten($color: $sidebar-color, $amount: 30);
+$card-footer-color: lighten($color: $sidebar-color, $amount: 40);
 
 $sidebar-max-width: 300px;
 $sidebar-width: 23vw;

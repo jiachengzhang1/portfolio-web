@@ -122,8 +122,7 @@ STATICFILES_FINDERS = [
 ]
 
 # Django Sass
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static') 
-
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static') 
 
 # Static files (CSS, JavaScript, Images)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
