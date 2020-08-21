@@ -1,31 +1,33 @@
 {% extends 'portfolio_web/components/base.html' %}
-{% load static %}
+<!-- {% load static %} -->
+{% load sass_tags %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% sass_src 'scss/experience.scss' %}" />
+{% endblock %}
+
 {% block content %}
-<div class="experience-page">
-    <article>
-        <div class="experienses">
-            {% for experience in experiences %}
-            <section>
-                <div class="experience-card">
-                    <div class="experience-card-header">
-                        <div class="experience-card-header-content">
-                            <img src="{{ experience.image.url }}" alt="experience" height="38px" />
-                            <h3>{{ experience.title }}</h3>
-                            <h4>{{ experience.position }}</h4>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="experience-card-content">
-                        <h4>{{ experience.position }}</h4>
-                        {{ experience.content|safe }}
-                    </div>
-                    <div class="experience-card-footer">
-                        {{ experience.date }} &nbsp;&nbsp;<b>|</b>&nbsp;&nbsp; {{ experience.location }}
-                    </div>
+<article>
+    {% for experience in experiences %}
+    <section>
+        <div class="experience-card">
+            <div class="experience-card-header">
+                <div class="experience-card-header-content">
+                    <img src="{{ experience.image.url }}" alt="experience" height="38px" />
+                    <h3>{{ experience.title }}</h3>
+                    <h4>{{ experience.position }}</h4>
                 </div>
-            </section>
-            {% endfor %}
+                <!-- <hr> -->
+            </div>
+            <div class="experience-card-content">
+                <h4>{{ experience.position }}</h4>
+                <p>{{ experience.content|safe }}</p>
+            </div>
+            <div class="experience-card-footer">
+                {{ experience.date }} &nbsp;&nbsp;<b>|</b>&nbsp;&nbsp; {{ experience.location }}
+            </div>
         </div>
-    </article>
-</div>
+    </section>
+    {% endfor %}
+</article>
 {% endblock content %}

@@ -1,0 +1,21 @@
+@import 'variables';
+
+.contact-detail {
+    margin-top: 16px;
+
+    span {
+        display: inline-block;
+        width: 130px;
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        width: fit-content;
+        color: $sidebar-color;
+
+        &:hover{
+            color: darken($color: $sidebar-color, $amount: 20);
+        }
+    }
+}

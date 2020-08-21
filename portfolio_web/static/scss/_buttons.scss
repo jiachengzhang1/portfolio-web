@@ -1,0 +1,65 @@
+$nav-text-color: darken($color: $text-color, $amount: 16);
+$nav-text-hover-color: $text-color;
+
+%btn {
+    width: fit-content;
+    text-decoration: none !important;
+    border-radius: 5px;
+    color: darken($color: $text-color, $amount: 5);
+
+    &:hover {
+        color: lighten($color: $text-color, $amount: 10);
+    }
+}
+
+.btn-nav {
+    @extend %btn;
+    border-radius: 0;
+    padding: 6px 8px;
+    color: $nav-text-color;
+
+    &:hover {
+        background-color: darken($color: $sidebar-color, $amount: 15);
+        border-radius: 5px;
+    }
+}
+
+.btn-nav-active {
+    @extend .btn-nav;
+    color: $nav-text-hover-color;
+    border-radius: 5px;
+    background-color: darken($color: $sidebar-color, $amount: 18);
+   
+}
+
+.btn-social {
+    @extend %btn;
+    color: $nav-text-color;
+    font-size: 22px;
+
+    &:hover {
+        color: $nav-text-hover-color;
+    }
+}
+
+.btn-tag {
+    @extend %btn;
+    color: $text-color;
+    padding: 4px 18px;
+    background: $technology-tag-color;
+    border-radius: 50px;
+    
+    &:hover { 
+        background: darken($color: $technology-tag-color, $amount: 10);
+    }
+}
+
+.btn-primary {
+    @extend %btn;
+    background: $sidebar-color;
+    padding: 8px 20px;
+ 
+    &:hover {
+        background: darken($color: $sidebar-color, $amount: 18);
+    }
+}

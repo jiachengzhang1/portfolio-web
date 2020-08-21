@@ -1,0 +1,97 @@
+@import 'variables';
+
+@mixin inline-block {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin content {
+    font-weight: 600;
+    color: rgb(112, 108, 108);
+    font-size: 18px;
+}
+
+.experience-card {
+    border: 1px solid $card-border-color;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.781);
+    margin-bottom: 25px;
+
+    .experience-card-header {
+        padding: 20px;
+        margin: 0;
+        border-bottom: 1px solid $card-footer-border-top-color;
+
+        h3 {
+            @include inline-block();
+            font-size: 20px;
+            margin-left: 28px;
+        }
+
+        h4 {
+            @include inline-block();
+            @include content();
+            float: right;
+            margin-top: 6px;
+
+            @media (max-width: 1000px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 450px) {
+            padding: 6px;
+            h3 {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            img {
+                display: none;
+            }
+        }
+    }
+
+    .experience-card-content {
+        padding: 0 20px;
+        
+        h4 {
+            display: none;
+
+            @media (max-width: 1000px) {
+                @include content();
+                display: inline-block;
+                font-size: 16px;
+                margin-top: 35px;
+                margin-bottom: -35px;
+                padding: 0; 
+            }
+        }
+
+        & > :first-child {
+            margin-left: 0;
+        }
+
+        & > :last-child {
+            float: right;
+        }
+
+        @media (max-width: 1000px) {
+            margin-top: -30px;
+            font-size: 14px;
+            padding: 5px;
+        }
+    }
+
+    .experience-card-footer {
+        border-top: 1px solid $card-footer-border-top-color;
+        background: $card-footer-color;
+        border-radius: 0px 0px 5px 5px;
+        padding: 10px;
+
+        @media (max-width: 1000px) {
+            font-size: 14px;
+        }
+    }
+}
