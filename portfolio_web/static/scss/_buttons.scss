@@ -45,7 +45,7 @@ $nav-text-hover-color: $text-color;
 .btn-tag {
     @extend %btn;
     color: $text-color;
-    padding: 4px 18px;
+    padding: 1px 18px;
     background: $technology-tag-color;
     border-radius: 50px;
     
