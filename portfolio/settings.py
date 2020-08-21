@@ -44,6 +44,8 @@ else:
 
     ALLOWED_HOSTS = config['HOST_IP']
 
+GOOGLE_ANALYTICS_ID = config['GOOGLE_ANALYTICS_ID']
+
 # Application definition
 INSTALLED_APPS = [
     'portfolio_web.apps.PortfolioWebConfig',

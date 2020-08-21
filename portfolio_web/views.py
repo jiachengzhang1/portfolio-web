@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.conf import settings
 from .models import WebsiteInfo
 from .models import Project
 from .models import Experience
@@ -8,7 +9,8 @@ from .models import Education
 months = ["Jan", "Feb", "Mar", "Apr", "May", "June",
           "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
-default_context = {'analyticsId': 'UA-175463383-1'}
+
+default_context = {'analyticsId': settings.GOOGLE_ANALYTICS_ID}
 
 def home(request):
     website_info = WebsiteInfo.objects.first()
@@ -30,7 +32,7 @@ def home(request):
         'projects': projects,
         "page_title": "Project",
         'header_paragraph': website_info.portfolioPageHeader if website_info != None else '',
-        'header': 'PORTFOLIO'
+        'header': 'PROJECT' if len(projects) == 1 else 'PROJECTS'
     })
 
     return render(request, 'portfolio_web/pages/project.html', context)
@@ -71,7 +73,7 @@ def experience(request):
         "experiences":experiences,
         "page_title": "Experience",
         'header_paragraph': website_info.experiencePageHeader if website_info != None else '',
-        'header': 'EXPERIENCES'
+        'header': 'EXPERIENCE' if len(experiences) == 1 else 'EXPERIENCES'
     })
 
     return render(request, 'portfolio_web/pages/experience.html', context)
@@ -110,7 +112,7 @@ def education(request):
         "educations": educations,
         "page_title": "Education",
         'header_paragraph': website_info.educationPageHeader if website_info != None else '',
-        'header': 'Education'
+        'header': 'EDUCATION' if len(educations) == 1 else 'EDUCATIONS'
     })
 
     return render(request, 'portfolio_web/pages/education.html', context)
