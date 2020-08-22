@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/github/license/jiachengzhang1/portfolio-web)
 
 
-Portfolio website that showcases projects, work experiences and education history. Contents are customizable through the admin site.
+Portfolio website that showcases projects, work experiences and education history using Django. Contents are customizable through the admin site. (The old site can be found [here](https://jiachengzhang1.github.io/portfolio-react/#/))
 
 
 ## Prerequisites
@@ -72,4 +72,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-The design of the website is inspired by jtom.me and andrewborstein.com
+The design of the website is inspired by [jtom.me](https://jtom.me/) and [andrewborstein.com](https://andrewborstein.com/)
+
