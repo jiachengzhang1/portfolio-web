@@ -22,10 +22,18 @@
     <!-- Open Graph data -->
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="{{ type }}" />
-    <meta property="og:title" content="{{ name }}" />
+    <meta property="og:site_name" content="Personal Website">
+
+    {% if page_title %}
+    <meta property="og:title" content="{{ name }} - {{ page_title }}" />
+    {% else %}
+    <meta property="og:title" content="{{ name }} - {{ title }}" />
+    {% endif %}
+
     <meta property="og:url" content="{{ url }}" />
     <meta property="og:description"
         content="{{ description }}" />
+    <meta property="og:image" content="{% static 'img/website_img.png' %}" />
 
     <meta property="article:publisher" content="{{ url }}" />
     <meta name="author" content="{{ name }}" />
@@ -53,7 +61,7 @@
     {% if page_title %}
         <title>{{ name }} - {{ page_title }}</title>
     {% else %}
-        <title>{{ name }}</title>
+        <title>{{ name }} - {{ title }}</title>
     {% endif %}
 </head>
 
