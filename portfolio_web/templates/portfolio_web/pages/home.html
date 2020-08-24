@@ -1,0 +1,27 @@
+{% extends 'portfolio_web/components/base.html' %}
+{% load sass_tags %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% sass_src 'scss/home.scss' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="home">
+    <h1>Hi, I'm Jiacheng</h1>
+    <div class="home-summary">
+        <h2>A software developer with experiences in Web Development, AWS and Julia.</h2>
+        <h2>A graduate student in Computer Science.</h2>
+    </div>
+
+    <nav>
+        <ul class="home-quick-links">
+            <li><a href="{% url 'portfolio-web-project' %}" >PROJECT</a></li>
+            <li><a href="{% url 'portfolio-web-experience' %}" >EXPERIENCE</a></li>
+            <li><a href="{% url 'portfolio-web-education' %}" >EDUCATION</a></li>
+        </ul>
+    </nav>
+
+    <p>Fun fact: Another way to get to Mars is to fold a paper 51 times 🚀🚀</p>
+    
+</div>
+{% endblock content %}

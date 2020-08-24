@@ -3,17 +3,26 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: $main-page-color;
+    background-image: url('/static/img/background.jpeg');
+    background-color: $main-page-color;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
     @import 'navigation';
 
     .content-wrapper {
+        background: $main-page-color;
+        display: block;
         position: absolute;
         right: 0;
         left: $sidebar-max-width;
         padding: 20px 20px 20px 30px;
-        height: $max-height;
+        min-height: 100vh;
+        min-width: 100vw - $sidebar-width;
         overflow-y: auto;
+        z-index: -100;
 
         @media (max-width: 1300px) {
             left: $sidebar-width;
@@ -23,8 +32,9 @@ body {
             position: relative;
             left: 0px;
             width: 96vw;
-            padding: 20px 0 0 4vw;
+            padding: 20px 4vw 20px 4vw;
             overflow-y: initial;
+            min-width: 100vw;
         }
     }
 }

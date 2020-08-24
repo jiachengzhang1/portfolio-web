@@ -13,6 +13,10 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "June",
 default_context = {'analyticsId': settings.GOOGLE_ANALYTICS_ID}
 
 def home(request):
+    return render(request, 'portfolio_web/pages/home.html', {})
+
+
+def project(request):
     website_info = WebsiteInfo.objects.first()
     projects = []
 

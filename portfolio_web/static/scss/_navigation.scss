@@ -1,5 +1,5 @@
 .sitebar {
-    position: absolute;
+    position: fixed;
     display: block;
     left: 0;
     height: $max-height;
@@ -85,6 +85,7 @@ header {
             background: $sidebar-color;
             color: white;
             text-align: center;
+            margin-bottom: -15px;
     
             ul {
                 padding: 0;
@@ -104,6 +105,7 @@ header {
         .sidebar-title {
             color: white;
             text-align: center;
+            text-decoration: none;
         }
 
         h1 {
