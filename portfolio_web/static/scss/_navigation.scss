@@ -70,8 +70,12 @@
 
 header {
     display: none;
+    z-index: 100;
     @media (max-width: 1000px) {
+        position: fixed;
         display: block;
+        width: 100vw;
+        top: 0;
         .sidebar-top {
             background-color: $sidebar-color;
             height: $sidebar-top-height;
@@ -134,4 +138,8 @@ header {
     .show {
         display: block !important;
     }
+}
+
+.header-hidden {
+    display: none !important;
 }

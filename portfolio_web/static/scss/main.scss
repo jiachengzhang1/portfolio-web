@@ -22,23 +22,20 @@ body {
         min-height: 100vh;
         min-width: 100vw - $sidebar-width;
         overflow-y: auto;
-        z-index: -100;
 
         @media (max-width: 1300px) {
             left: $sidebar-width;
+            // top: $sidebar-top-height;
         }
     
         @media (max-width: 1000px) {
+            // padding-top: $sidebar-top-height;
             position: relative;
             left: 0px;
             width: 96vw;
-            padding: 20px 4vw 20px 4vw;
+            padding: 20px+$sidebar-top-height 4vw 20px 4vw;
             overflow-y: initial;
             min-width: 100vw;
         }
     }
 }
-
-
-
-
